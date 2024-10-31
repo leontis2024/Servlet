@@ -62,7 +62,7 @@
         </h1>
         <div id="nomeDiv">
             <label for="nome">Nome do Museu:</label>
-            <input type="text" name="nome" id="nome" placeholder="Digite como os outros vão te chamar" size="45" value="<%=objMuseu?museu.getNmMuseu():""%>" required>
+            <input type="text" name="nome" id="nome" placeholder="Digite qual o nome do museu" size="45" value="<%=objMuseu?museu.getNmMuseu():""%>" required>
         </div>
 
         <div id="inauguracaoDiv">
@@ -72,7 +72,7 @@
 
         <div id="telDiv">
             <label for="tel">Telefone:</label>
-            <input type="tel" name="tel" id="tel" value="<%=objMuseu?museu.getNrTelMuseu():""%>">
+            <input type="text" name="tel" id="tel" value="<%=objMuseu?museu.getNrTelMuseu():""%>">
         </div>
 
         <div id="ftMuseuDiv">
@@ -124,51 +124,51 @@
 
             <div class="diaSemana">
                 <p>Domingo</p>
-                <input type="time" name="hrAbertura" class="hrAbertura" value="<%=objDomingo ? domingo.getHrInicio() : "" %>">
-                <input type="time" name="hrFechamento" class="hrFechamento" value="<%=objDomingo ? domingo.getHrTermino() : "" %>">
-                <input type="number" name="valorIngresso" class="valorIngresso" min="0" value="<%=objDomingo ? domingo.getPrDiaFuncionamento() : "" %>">
+                <input type="time" name="aberDom" class="hrAbertura" value="<%=objDomingo ? domingo.getHrInicio() : "" %>">
+                <input type="time" name="fechDom" class="hrFechamento" value="<%=objDomingo ? domingo.getHrTermino() : "" %>">
+                <input type="number" name="valorDom" class="valorIngresso" min="0" value="<%=objDomingo ? domingo.getPrDiaFuncionamento() : "" %>">
             </div>
 
             <div class="diaSemana">
                 <p>Segunda</p>
-                <input type="time" name="hrAbertura" class="hrAbertura" value="<%=objSegunda ? segunda.getHrInicio() : ""%>">
-                <input type="time" name="hrFechamento" class="hrFechamento" value="<%=objSegunda ? segunda.getHrTermino() : ""%>">
-                <input type="number" name="valorIngresso" class="valorIngresso" min="0" value="<%=objSegunda ? segunda.getPrDiaFuncionamento() : ""%>">
+                <input type="time" name="aberSeg" class="hrAbertura" value="<%=objSegunda ? segunda.getHrInicio() : ""%>">
+                <input type="time" name="fechSeg" class="hrFechamento" value="<%=objSegunda ? segunda.getHrTermino() : ""%>">
+                <input type="number" name="valorSeg" class="valorIngresso" min="0" value="<%=objSegunda ? segunda.getPrDiaFuncionamento() : ""%>">
             </div>
 
             <div class="diaSemana">
                 <p>Terça</p>
-                <input type="time" name="hrAbertura" class="hrAbertura" value="<%=objTerca ? terca.getHrInicio() : ""%>">
-                <input type="time" name="hrFechamento" class="hrFechamento" value="<%=objTerca ? terca.getHrTermino() : ""%>">
-                <input type="number" name="valorIngresso" class="valorIngresso" min="0" value="<%=objTerca ? terca.getPrDiaFuncionamento() : ""%>">
+                <input type="time" name="aberTer" class="hrAbertura" value="<%=objTerca ? terca.getHrInicio() : ""%>">
+                <input type="time" name="fechTer" class="hrFechamento" value="<%=objTerca ? terca.getHrTermino() : ""%>">
+                <input type="number" name="valorTer" class="valorIngresso" min="0" value="<%=objTerca ? terca.getPrDiaFuncionamento() : ""%>">
             </div>
 
             <div class="diaSemana">
                 <p>Quarta</p>
-                <input type="time" name="hrAbertura" class="hrAbertura" value="<%=objQuarta ? quarta.getHrInicio() : ""%>">
-                <input type="time" name="hrFechamento" class="hrFechamento" value="<%=objQuarta ? quarta.getHrTermino() : ""%>">
-                <input type="number" name="valorIngresso" class="valorIngresso" min="0" value="<%=objQuarta ? quarta.getPrDiaFuncionamento() : ""%>">
+                <input type="time" name="aberQua" class="hrAbertura" value="<%=objQuarta ? quarta.getHrInicio() : ""%>">
+                <input type="time" name="fechQua" class="hrFechamento" value="<%=objQuarta ? quarta.getHrTermino() : ""%>">
+                <input type="number" name="valorQua" class="valorIngresso" min="0" value="<%=objQuarta ? quarta.getPrDiaFuncionamento() : ""%>">
             </div>
 
             <div class="diaSemana">
                 <p>Quinta</p>
-                <input type="time" name="hrAbertura" class="hrAbertura" value="<%=objQuinta ? quinta.getHrInicio() : ""%>">
-                <input type="time" name="hrFechamento" class="hrFechamento" value="<%=objQuinta ? quinta.getHrTermino() : ""%>">
-                <input type="number" name="valorIngresso" class="valorIngresso" min="0" value="<%=objQuinta ? quinta.getPrDiaFuncionamento() : ""%>">
+                <input type="time" name="aberQui" class="hrAbertura" value="<%=objQuinta ? quinta.getHrInicio() : ""%>">
+                <input type="time" name="fechQui" class="hrFechamento" value="<%=objQuinta ? quinta.getHrTermino() : ""%>">
+                <input type="number" name="valorQui" class="valorIngresso" min="0" value="<%=objQuinta ? quinta.getPrDiaFuncionamento() : ""%>">
             </div>
 
             <div class="diaSemana">
                 <p>Sexta</p>
-                <input type="time" name="hrAbertura" class="hrAbertura" value="<%=objSexta ? sexta.getHrInicio() : ""%>">
-                <input type="time" name="hrFechamento" class="hrFechamento" value="<%=objSexta ? sexta.getHrTermino() : ""%>">
-                <input type="number" name="valorIngresso" class="valorIngresso" min="0" value="<%=objSexta ? sexta.getPrDiaFuncionamento() : ""%>">
+                <input type="time" name="aberSex" class="hrAbertura" value="<%=objSexta ? sexta.getHrInicio() : ""%>">
+                <input type="time" name="fechSex" class="hrFechamento" value="<%=objSexta ? sexta.getHrTermino() : ""%>">
+                <input type="number" name="valorSex" class="valorIngresso" min="0" value="<%=objSexta ? sexta.getPrDiaFuncionamento() : ""%>">
             </div>
 
             <div class="diaSemana">
                 <p>Sábado</p>
-                <input type="time" name="hrAbertura" class="hrAbertura" value="<%=objSabado ? sabado.getHrInicio() : ""%>">
-                <input type="time" name="hrFechamento" class="hrFechamento" value="<%=objSabado ? sabado.getHrTermino() : ""%>">
-                <input type="number" name="valorIngresso" class="valorIngresso" min="0" value="<%=objSabado ? sabado.getPrDiaFuncionamento() : ""%>">
+                <input type="time" name="aberSab" class="hrAbertura" value="<%=objSabado ? sabado.getHrInicio() : ""%>">
+                <input type="time" name="fechSab" class="hrFechamento" value="<%=objSabado ? sabado.getHrTermino() : ""%>">
+                <input type="number" name="valorSab" class="valorIngresso" min="0" value="<%=objSabado ? sabado.getPrDiaFuncionamento() : ""%>">
             </div>
         </div>
         <div id="ruaDiv">

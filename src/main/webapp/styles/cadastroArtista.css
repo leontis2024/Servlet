@@ -5,7 +5,7 @@ body {
 #formulario {
     width: 90vw;
     position: relative;
-    top: 12vh;
+    top: 90px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 2vw;
@@ -24,7 +24,14 @@ label {
     font-size: 20px;
 }
 
-input, textarea, select, option {
+input {
+    width: 20vw;
+    font-size: 16px;
+    padding: 1px 3px;
+}
+
+textarea, select, option {
+    width: 43vw;
     font-size: 16px;
     padding: 1px 3px;
 }
