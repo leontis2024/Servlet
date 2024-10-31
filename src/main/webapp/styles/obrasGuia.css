@@ -1,0 +1,122 @@
+#titulo {
+    width: 80vw;
+    position: relative;
+    top: 100px;
+    left: 50px;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+#obras {
+    width: 100vw;
+    position: relative;
+    top: 130px;
+    display: flex;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.obra {
+    width: fit-content;
+    white-space: wrap;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #EEB08C;
+    border: 2px solid #282525;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.obra:hover {
+    transform: scale(1.02);
+}
+
+.numObra {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.selectObra {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.opcoesObras {
+    width: 250px;
+    font-size: 16px;
+}
+
+.opcoesObras > option {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.descCaminhoObra {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.caminhoObra {
+    width: 400px;
+    height: 150px;
+    resize: none;
+    padding: 10px;
+}
+
+#botoes {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    top: 150px;
+}
+
+#salvar {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    top: 180px;
+}
+
+.botao {
+    width: 200px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #EEB08C;
+    border: 2px solid #282525;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.botao:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 630px) {
+    #titulo {
+        font-size: 40px;
+        left: 20px;
+    }
+}
+
+@media (max-width: 460px) {
+    .obra, .caminhoObra {
+        width: 250px;
+    }
+
+    #botoes {
+        flex-direction: column;
+    }
+}

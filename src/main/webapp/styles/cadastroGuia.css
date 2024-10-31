@@ -1,0 +1,74 @@
+body {
+    background: linear-gradient(90deg, rgba(245,224,212,1) 30%, rgba(238,176,140,1) 100%);
+}
+
+#formulario {
+    width: 90vw;
+    position: relative;
+    top: 12vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2vw;
+    row-gap: 4vh;
+    grid-template-areas:
+    "titulo titulo titulo"
+    "nome desc desc"
+    "ftGuia desc desc"
+    "finalizar finalizar finalizar";
+    margin: auto;
+    padding: 20px;
+}
+
+label {
+    font-size: 20px;
+}
+
+input, textarea {
+    font-size: 16px;
+    padding: 1px 3px;
+}
+
+#titCadastro {
+    font-size: 50px;
+    font-weight: 600;
+    grid-area: titulo;
+}
+
+#nome {
+    grid-area: nome;
+}
+
+#desc {
+    grid-area: desc;
+}
+
+#descricao {
+    height: 24vh;
+    resize: none;
+}
+
+#ftGuia {
+    grid-area: ftGuia;
+}
+
+#finalizar {
+    text-align: center;
+    grid-area: finalizar;
+}
+
+.botao {
+    width: 100px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #EEB08C;
+    color: #282525;
+    cursor: pointer;
+    border: 2px solid #282525;
+    border-radius: 30px;
+    padding: 8px;
+}
+
+#nome, #desc, #ftGuia {
+    display: flex;
+    flex-direction: column;
+}

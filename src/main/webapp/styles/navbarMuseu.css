@@ -1,0 +1,100 @@
+#navbarMuseu {
+    width: 100vw;
+    height: 70px;
+    background-color: #7C3939;
+    position: fixed;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 3fr;
+    box-shadow: 0px 0px 15px 0px black;
+    z-index: 100;
+    transition: 0.5s;
+}
+
+#opcoesAtalhos {
+    position: relative;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: default;
+}
+
+#titOpcoesAtalhos {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 24px;
+    color: #F5E0D4;
+}
+
+#titOpcoesAtalhos:hover ~ #atalhos {
+    display: flex;
+}
+
+#atalhos {
+    width: 120px;
+    display: none;
+    flex-direction: column;
+    background-color: #7C3939;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#atalhos:hover {
+    display: flex;
+}
+
+
+#atalhos > form{
+    text-decoration: none;
+    font-size: 20px;
+    color: #F5E0D4;
+    padding: 5px 10px;
+    transition: 0.5s;
+}
+
+#atalhos > form:hover {
+    transform: scale(1.1);
+}
+
+.atalho {
+    cursor: pointer;
+}
+
+#navNomeMuseu {
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 32px;
+    color: #F5E0D4;
+    padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+    #titOpcoesAtalhos {
+        font-size: 22px;
+    }
+
+    #navNomeMuseu {
+        font-size: 22px;
+    }
+
+    .atalho {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 520px) {
+    #titOpcoesAtalhos {
+        font-size: 18px;
+    }
+
+    #navNomeMuseu {
+        font-size: 18px;
+    }
+
+    .atalho {
+        font-size: 16px;
+    }
+}
