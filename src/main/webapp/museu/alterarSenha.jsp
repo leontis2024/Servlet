@@ -31,9 +31,9 @@
             <%
                 if(request.getAttribute("erro") != null){
             %>
-            <p style="color: #F5E0D4"><%=request.getAttribute("erro")%></p>
+            <p style="color: #F5E0D4" id="descErro"><%=request.getAttribute("erro")%></p>
             <%}else{%>
-            <p style="opacity: 0;">.</p>
+            <p style="opacity: 0;" id="descErro">.</p>
             <%}%>
         </div>
 

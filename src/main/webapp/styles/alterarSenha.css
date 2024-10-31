@@ -72,12 +72,18 @@ input {
     border: solid 2px black;
     border-radius: 5px;
 }
+#descErro{
+    max-width: 420px;
+    text-align: center;
+}
 
 @media (max-width: 530px) {
     #formulario, form {
         width: 250px;
     }
-
+    #descErro{
+        max-width: 230px;
+    }
     input, #submit {
         width: 230px;
     }
