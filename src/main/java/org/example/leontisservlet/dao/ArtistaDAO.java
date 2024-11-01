@@ -6,37 +6,57 @@ import org.example.leontisservlet.model.Artista;
 import java.sql.*;
 public class ArtistaDAO {
 
+    //<editor-fold desc="Método inserir">
     public int inserir(Artista artista){
+        //Instanciando o objeto "conexao".
         Conexao conexao = new Conexao();
         try{
-            String tabelas = "(nm_artista, dt_nasc_artista, local_nasc";
+            //Armazenando as colunas obrigatórias na variável "colunas".
+            String colunas = "(nm_artista, dt_nasc_artista, local_nasc";
+
+            //Armazenando a quantidade de colunas obrigatórias, com "?" para chamar no insert futuramente.
             String parametros = "(?,?,?";
+
+            //Verificando as colunas que são opcionais, se não forem nulas, vai adicionar o nome da sua coluna na variável "colunas", e
+            //uma vírgula e o seu valor na variável "parametros".
             if(!artista.getDescArtista().isEmpty()){
-                tabelas+=",desc_artista";
+                colunas+=",desc_artista";
                 parametros+=",'"+artista.getDescArtista()+"'";
             }
             if(artista.getDtFalecimento() != null){
-                tabelas+=",dt_falecimento";
+                colunas+=",dt_falecimento";
                 parametros+=",'"+artista.getDtFalecimento()+"'";
             }
             if(!artista.getLocalMorte().isEmpty()){
-                tabelas+=",local_morte";
+                colunas+=",local_morte";
                 parametros+=",'"+artista.getLocalMorte()+"'";
             }
             if(!artista.getUrlImagem().isEmpty()){
-                tabelas+=",url_imagem";
+                colunas+=",url_imagem";
                 parametros+=",'"+artista.getUrlImagem()+"'";
-
             }
-            tabelas+=")";
+
+            //Armazenando um ")" para fechar as colunas e os parâmetros.
+            colunas+=")";
             parametros+=")";
+
+            //Abrindo uma conexão com o banco de dados.
             Connection conn = conexao.conectar();
-            String insert = "INSERT INTO artista "+tabelas+" VALUES "+parametros;
+
+            //Criando a String de insert.
+            String insert = "INSERT INTO artista "+colunas+" VALUES "+parametros;
+
+            //Preparando o insert.
             PreparedStatement pstmt = conn.prepareStatement(insert);
+
+            //Definindo os parâmetros com base nos objetos recebidos, apenas os obrigatórios,
+            //pois os opcionais foram definidos na validação.
             pstmt.setString(1,artista.getNmArtista());
             pstmt.setDate(2,artista.getDtNascArtista());
             pstmt.setString(3,artista.getLocalNasc());
 
+            //Retorno: se for 1 deu tudo certo,
+            //se for 0 não foi inserido, e se for -1, erro na conexão com o banco.
             if(pstmt.executeUpdate() > 0){
                 return 1;
             }else {
@@ -46,51 +66,13 @@ public class ArtistaDAO {
             sqle.printStackTrace();
             return -1;
         }finally {
+            //Dando erro ou não, desconectamos.
             conexao.desconectar();
         }
     }
+    //</editor-fold>
 
-    public int alterar(String valor,int id,String campo){
-        Conexao conexao = new Conexao();
-        try{
-            Connection conn = conexao.conectar();
-            String update = "UPDATE artista SET "+campo+" = ? WHERE id = ?";
-            PreparedStatement pstmt = conn.prepareStatement(update);
-            pstmt.setString(1,valor);
-            pstmt.setInt(2,id);
-            if(pstmt.executeUpdate() > 0){
-                return 1;
-            }else {
-                return 0;
-            }
-        }catch (SQLException sqle){
-            sqle.printStackTrace();
-            return -1;
-        }finally {
-            conexao.desconectar();
-        }
-    }
-    public int alterar(int valor,int id,String tabela){
-        Conexao conexao = new Conexao();
-        try{
-            Connection conn = conexao.conectar();
-            String update = "UPDATE artista SET "+tabela+" = ? WHERE id = ?";
-            PreparedStatement pstmt = conn.prepareStatement(update);
-            pstmt.setInt(1,valor);
-            pstmt.setInt(2,id);
-            if(pstmt.executeUpdate() > 0){
-                return 1;
-            }else {
-                return 0;
-            }
-        }catch (SQLException sqle){
-            sqle.printStackTrace();
-            return -1;
-        }finally {
-            conexao.desconectar();
-        }
-    }
-
+    //<editor-fold desc="Métodos alterar">
     public int alterarUrlImagem(String url_imagem, int id){
         Conexao conexao = new Conexao();
         try{
@@ -136,14 +118,24 @@ public class ArtistaDAO {
             conexao.desconectar();
         }
     }
+    //</editor-fold>
 
-
+    //<editor-fold desc="Método remover">
     public int remover(int id){
+        //Instanciando o objeto "conexao".
         Conexao conexao = new Conexao();
         try{
+            //Abrindo uma conexão com o banco de dados.
             Connection conn = conexao.conectar();
+
+            //Preparando o delete.
             PreparedStatement pstmt = conn.prepareStatement("DELETE FROM artista WHERE id = ?");
+
+            //Definindo o parâmetro com base no objeto recebido.
             pstmt.setInt(1,id);
+
+            //Retorno: se for 1 deu tudo certo,
+            //se for 0 não executou, e se for -1, erro na conexão com o banco.
             if(pstmt.executeUpdate() > 0){
                 return 1;
             }else {
@@ -153,50 +145,91 @@ public class ArtistaDAO {
             sqle.printStackTrace();
             return -1;
         }finally {
+            //Dando erro ou não, desconectamos.
+            conexao.desconectar();
+        }
+    }
+    //</editor-fold>
+
+    //<editor-fold desc="Métodos buscar">
+    public ResultSet buscarPorId(int id){
+        //Instanciando o objeto "conexao".
+        Conexao conexao = new Conexao();
+        try{
+            //Abrindo uma conexão com o banco de dados.
+            Connection conn = conexao.conectar();
+
+            //Preparando o select.
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM artista WHERE id = ?");
+
+            //Definindo o parâmetro com base no objeto recebido.
+            pstmt.setInt(1,id);
+
+            //Retornando os dados da consulta SQL.
+            return pstmt.executeQuery();
+
+            //Caso der algum erro no banco de dados, vai retornar nulo.
+        }catch (SQLException sqle){
+            sqle.printStackTrace();
+            return null;
+        }finally {
+            //Dando erro ou não, desconectamos.
             conexao.desconectar();
         }
     }
 
-    public ResultSet buscarPorId(int id){
-        Conexao conexao = new Conexao();
-        try{
-            Connection conn = conexao.conectar();
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM artista WHERE id = ?");
-            pstmt.setInt(1,id);
-            return pstmt.executeQuery();
-        }catch (SQLException sqle){
-            sqle.printStackTrace();
-            return null;
-        }finally {
-            conexao.desconectar();
-        }
-    }
     public ResultSet buscarPorNome(String nome){
+        //Instanciando o objeto "conexao".
         Conexao conexao = new Conexao();
         try{
+            //Abrindo uma conexão com o banco de dados.
             Connection conn = conexao.conectar();
-            //ordenando pelo id decrescente para sempre retornar mais recente inserido primeiro em caso de nome repetido
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM artista WHERE nm_artista = ? ORDER BY id DESC");
+
+            //Preparando o select.
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM artista WHERE nm_artista = ?");
+
+            //Definindo o parâmetro com base no objeto recebido.
             pstmt.setString(1,nome);
+
+            //Retornando os dados da consulta SQL.
             return pstmt.executeQuery();
+
+            //Caso der algum erro no banco de dados, vai retornar nulo.
         }catch (SQLException sqle){
             sqle.printStackTrace();
             return null;
         }finally {
+            //Dando erro ou não, desconectamos.
             conexao.desconectar();
         }
     }
+
     public ResultSet buscarTodos(){
+        //Instanciando o objeto "conexao".
         Conexao conexao = new Conexao();
         try{
+            //Abrindo uma conexão com o banco de dados.
             Connection conn = conexao.conectar();
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM artista ORDER BY nm_artista");
+
+            //Preparando o select.
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM artista ORDER BY nm_artista DESC");
+
+            //Retornando os dados da consulta SQL.
             return pstmt.executeQuery();
+
+            //Caso der algum erro no banco de dados, vai retornar nulo.
         }catch (SQLException sqle){
             sqle.printStackTrace();
             return null;
         }finally {
+            //Dando erro ou não, desconectamos.
             conexao.desconectar();
         }
     }
+    //</editor-fold>
+
 }
+
+
+
+

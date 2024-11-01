@@ -5,12 +5,14 @@ import org.example.leontisservlet.model.Museu;
 import java.sql.*;
 
 public class MuseuDAO {
+    //<editor-fold desc="Método inserir">
     public int inserir(Museu museu){
         Conexao conexao = new Conexao();
         try{
-//          Criando a String do insert
+//          Criando a String do insert.
             String colunas = "(nm_museu,rua,estado,cidade,cep,dt_inauguracao,cnpj,id_museu_adm";
             String parametros = "(?,?,?,?,?,?,?,?";
+
             if(!museu.getDescMuseu().isEmpty()){
                 colunas+=",desc_museu";
                 parametros+=",'"+museu.getDescMuseu()+"'";
@@ -58,71 +60,10 @@ public class MuseuDAO {
             conexao.desconectar();
         }
     }
+    //</editor-fold>
 
-    public int alterar(String valor,int id,String coluna){
-        Conexao conexao = new Conexao();
-        try{
-            Connection conn = conexao.conectar();
-            String update = "UPDATE museu SET "+coluna+" = ? WHERE id = ?";
-            PreparedStatement pstmt = conn.prepareStatement(update);
-            pstmt.setString(1,valor);
-            pstmt.setInt(2,id);
-            if(pstmt.executeUpdate() > 0){
-                return 1;
-            }else {
-                return 0;
-            }
-        }catch (SQLException sqle){
-            sqle.printStackTrace();
-            return -1;
-        }finally {
-            conexao.desconectar();
-        }
-    }
-    public int alterar(int valor,int id,String coluna){
-        Conexao conexao = new Conexao();
-
-        try{
-            Connection conn = conexao.conectar();
-            String update = "UPDATE museu SET "+coluna+" = ? WHERE id = ?";
-            PreparedStatement pstmt = conn.prepareStatement(update);
-            pstmt.setInt(1,valor);
-            pstmt.setInt(2,id);
-            if(pstmt.executeUpdate() > 0){
-                return 1;
-            }else {
-                return 0;
-            }
-        }catch (SQLException sqle){
-            sqle.printStackTrace();
-            return -1;
-        }finally {
-            conexao.desconectar();
-        }
-    }
-    public int alterar(Date valor,int id,String coluna){
-        Conexao conexao = new Conexao();
-
-        try{
-            Connection conn = conexao.conectar();
-            String update = "UPDATE museu SET "+coluna+" = ? WHERE id = ?";
-            PreparedStatement pstmt = conn.prepareStatement(update);
-            pstmt.setDate(1,valor);
-            pstmt.setInt(2,id);
-            if(pstmt.executeUpdate() > 0){
-                return 1;
-            }else {
-                return 0;
-            }
-        }catch (SQLException sqle){
-            sqle.printStackTrace();
-            return -1;
-        }finally {
-            conexao.desconectar();
-        }
-    }
-
-    //Metodo apenas para url da imagem, pois ela só é editada caso o usuario insira uma nova no cadastro, caso contrario, mantemos a mesma
+    //<editor-fold desc="Métodos Alterar">
+    //Método apenas para url da imagem, pois ela só é editada caso o usuário insira uma nova no cadastro, caso contrário, mantemos a mesma.
     public int alterarUrlImagem(String url_imagem, int id){
         Conexao conexao = new Conexao();
         try {
@@ -143,6 +84,8 @@ public class MuseuDAO {
             conexao.desconectar();
         }
     }
+
+    //Método alterar - geral.
     public int alterar(Museu museu, int id){
         Conexao conexao = new Conexao();
         try{
@@ -173,7 +116,9 @@ public class MuseuDAO {
             conexao.desconectar();
         }
     }
+    //</editor-fold>
 
+    //<editor-fold desc="Método remover">
     public int remover(int id){
         Conexao conexao = new Conexao();
 
@@ -193,7 +138,10 @@ public class MuseuDAO {
             conexao.desconectar();
         }
     }
+    //</editor-fold>
 
+    //<editor-fold desc="Métodos buscar">
+    //Método buscar por id.
     public ResultSet buscarPorId(int id){
         Conexao conexao = new Conexao();
 
@@ -209,21 +157,8 @@ public class MuseuDAO {
             conexao.desconectar();
         }
     }
-    public ResultSet buscarPorNome(String nome){
-        Conexao conexao = new Conexao();
 
-        try{
-            Connection conn = conexao.conectar();
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM museu WHERE nm_museu = ?");
-            pstmt.setString(1,nome);
-            return pstmt.executeQuery();
-        }catch (SQLException sqle){
-            sqle.printStackTrace();
-            return null;
-        }finally {
-            conexao.desconectar();
-        }
-    }
+    //Método buscar pelo id do museu adm.
     public ResultSet buscarPorIdMuseuAdm(int id){
         Conexao conexao = new Conexao();
 
@@ -239,5 +174,6 @@ public class MuseuDAO {
             conexao.desconectar();
         }
     }
+    //</editor-fold>
 
 }

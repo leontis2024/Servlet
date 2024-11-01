@@ -6,7 +6,7 @@ import java.sql.*;
 
 public class ObraDAO {
 
-    //MÉTODO INSERT
+    //<editor-fold desc="Método inserir">
     public int inserir(Obra obra){
         Conexao conexao = new Conexao();
         try{
@@ -45,49 +45,10 @@ public class ObraDAO {
             conexao.desconectar();
         }
     }
+    //</editor-fold>
 
-    //MÉTODOS ALTERAR
-    public int alterar(String valor,int id,String coluna){
-        Conexao conexao = new Conexao();
-        try{
-            Connection conn = conexao.conectar();
-            String update = "UPDATE obra SET "+coluna+" = ? WHERE id = ?";
-            PreparedStatement pstmt = conn.prepareStatement(update);
-            pstmt.setString(1,valor);
-            pstmt.setInt(2,id);
-            if(pstmt.executeUpdate() > 0){
-                return 1;
-            }else {
-                return 0;
-            }
-        }catch (SQLException sqle){
-            sqle.printStackTrace();
-            return -1;
-        }finally {
-            conexao.desconectar();
-        }
-    }
-    public int alterar(int valor,int id,String coluna){
-        Conexao conexao = new Conexao();
-        try{
-            Connection conn = conexao.conectar();
-            String update = "UPDATE obra SET "+coluna+" = ? WHERE id = ?";
-            PreparedStatement pstmt = conn.prepareStatement(update);
-            pstmt.setInt(1,valor);
-            pstmt.setInt(2,id);
-            if(pstmt.executeUpdate() > 0){
-                return 1;
-            }else {
-                return 0;
-            }
-        }catch (SQLException sqle){
-            sqle.printStackTrace();
-            return -1;
-        }finally {
-            conexao.desconectar();
-        }
-    }
-
+    //<editor-fold desc="Métodos alterar">
+    //Método que altera a url da imagem.
     public int alterarUrlImagem(String url_imagem, int id){
         Conexao conexao = new Conexao();
         try{
@@ -108,6 +69,8 @@ public class ObraDAO {
             conexao.desconectar();
         }
     }
+
+    //Método alterar - geral.
     public int alterar(Obra obra, int id){
         Conexao conexao = new Conexao();
         try{
@@ -134,8 +97,9 @@ public class ObraDAO {
             conexao.desconectar();
         }
     }
+    //</editor-fold>
 
-    //MÉTODO DELETE
+    //<editor-fold desc="Método remover">
     public int remover(int id){
         Conexao conexao = new Conexao();
         try{
@@ -154,7 +118,10 @@ public class ObraDAO {
             conexao.desconectar();
         }
     }
+    //</editor-fold>
 
+    //<editor-fold desc="Métodos buscar">
+    //Método buscar por id.
     public ResultSet buscarPorId(int id){
         Conexao conexao = new Conexao();
         try{
@@ -170,6 +137,7 @@ public class ObraDAO {
         }
     }
 
+    //Método buscar por nome.
     public ResultSet buscarPorNome(String nmObra){
         Conexao conexao = new Conexao();
         try{
@@ -185,6 +153,7 @@ public class ObraDAO {
         }
     }
 
+    //Método buscar pelo id do gênero.
     public ResultSet buscarPorIdGenero(int idGenero){
         Conexao conexao = new Conexao();
         try{
@@ -200,6 +169,7 @@ public class ObraDAO {
         }
     }
 
+    //Método buscar pelo artista.
     public ResultSet buscarPorArtista(int idArtista){
         Conexao conexao = new Conexao();
         try{
@@ -215,11 +185,12 @@ public class ObraDAO {
         }
     }
 
+    //Método buscar pelo id do museu.
     public ResultSet buscarPorIdMuseu(int idMuseu){
         Conexao conexao = new Conexao();
         try{
             Connection conn = conexao.conectar();
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM obra WHERE id_museu = ? ORDER BY  nm_obra");
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM obra WHERE id_museu = ?");
             pstmt.setInt(1,idMuseu);
             return pstmt.executeQuery();
         }catch (SQLException sqle){
@@ -229,7 +200,5 @@ public class ObraDAO {
             conexao.desconectar();
         }
     }
-
-
-
+    //</editor-fold>
 }

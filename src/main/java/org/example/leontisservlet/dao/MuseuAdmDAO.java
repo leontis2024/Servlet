@@ -7,11 +7,12 @@ import java.sql.SQLException;
 
 
 public class MuseuAdmDAO {
+    //<editor-fold desc="Método inserir">
     public int inserir(String email_adm, String senha_adm){
         Conexao conexao = new Conexao();
         try{
             Connection conn = conexao.conectar();
-            String insert = "INSERT INTO museu (email_adm,senha_adm) VALUES (?,?)";
+            String insert = "INSERT INTO museu_adm (email_adm,senha_adm) VALUES (?,?)";
             PreparedStatement pstmt = conn.prepareStatement(insert);
             pstmt.setString(1,email_adm);
             pstmt.setString(2,senha_adm);
@@ -27,7 +28,9 @@ public class MuseuAdmDAO {
             conexao.desconectar();
         }
     }
+    //</editor-fold>
 
+    //<editor-fold desc="Método alterar">
     public int alterar(String valor,int id,String tabela){
         Conexao conexao = new Conexao();
         try{
@@ -48,7 +51,7 @@ public class MuseuAdmDAO {
             conexao.desconectar();
         }
     }
-    public int alterarSenha(String senha, int id){
+    public int alterarSenha(String senha,int id){
         Conexao conexao = new Conexao();
         try{
             Connection conn = conexao.conectar();
@@ -68,8 +71,9 @@ public class MuseuAdmDAO {
             conexao.desconectar();
         }
     }
+    //</editor-fold>
 
-
+    //<editor-fold desc="Método remover">
     public int remover(int id){
         Conexao conexao = new Conexao();
         try{
@@ -88,7 +92,10 @@ public class MuseuAdmDAO {
             conexao.desconectar();
         }
     }
+    //</editor-fold>
 
+    //<editor-fold desc="Método buscar">
+    //Método buscar por id.
     public ResultSet buscarPorId(int id){
         Conexao conexao = new Conexao();
         try{
@@ -103,6 +110,8 @@ public class MuseuAdmDAO {
             conexao.desconectar();
         }
     }
+
+    //Método buscar pelo email.
     public ResultSet buscarPorEmail(String email){
         Conexao conexao = new Conexao();
         try{
@@ -117,6 +126,9 @@ public class MuseuAdmDAO {
             conexao.desconectar();
         }
     }
+    //</editor-fold>
 
 }
+
+
 
