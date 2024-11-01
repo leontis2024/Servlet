@@ -1,7 +1,7 @@
 package org.example.leontisservlet.model;
 
 public class Obra {
-    //ATRIBUTOS DA CLASSE
+//  ATRIBUTOS DA CLASSE
     private int id; //n
     private int anoInicio; //n
     private int anoFinal; //n
@@ -12,7 +12,7 @@ public class Obra {
     private int idMuseu; //s
     private String urlImagem; //
 
-    //MÉTODO CONSTRUTOR
+//    MÉTODO CONSTRUTOR
     public Obra(int id, int anoInicio, int anoFinal, String descObra, String nmObra, int idGenero, int idArtista, int idMuseu, String urlImagem) {
         this.id = id;
         this.anoInicio = anoInicio;
@@ -25,7 +25,7 @@ public class Obra {
         this.urlImagem = urlImagem;
     }
 
-    //GETTERS E SETTERS
+//    MÉTODOS GETTERS E SETTERS
     public int getId() {
         return this.id;
     }
@@ -66,7 +66,7 @@ public class Obra {
         this.urlImagem = urlImagem;
     }
 
-    //TOSTRING
+//    MÉTODO TOSTRING
     public String toString() {
         return "Id da obra: " + this.id + "\n" +
                 "Ano que a obra começou a ser produzida: " + this.anoInicio + "\n" +

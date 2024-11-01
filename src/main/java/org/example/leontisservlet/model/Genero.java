@@ -1,12 +1,13 @@
 package org.example.leontisservlet.model;
 
 public class Genero {
-//    ATRIBUTOS DA CLASSE GENERO
+//    ATRIBUTOS DA CLASSE
     private int id;
     private String nmGenero;
     private String intro;
     private String descGenero;
     private String urlImagem;
+
 //    MÉTODO CONSTRUTOR
     public Genero(int id, String nmGenero, String intro, String descGenero, String urlImagem){
         this.id = id;
@@ -15,7 +16,8 @@ public class Genero {
         this.descGenero = descGenero;
         this.urlImagem = urlImagem;
     }
-//    MÉTODOS GET
+
+//    MÉTODOS GETTERS E SETTERS
     public int getId() {
         return this.id;
     }
@@ -31,6 +33,7 @@ public class Genero {
     public String getUrlImagem(){
         return this.urlImagem;
     }
+
 //    MÉTODO TOSTRING
 public String toString(){
     return "Id: "+this.id+"\n" +

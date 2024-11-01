@@ -1,7 +1,7 @@
 package org.example.leontisservlet.model;
 
 public class ArtistaGenero {
-//    ATRIBUTOS
+//   ATRIBUTOS DA CLASSE
     private int id;
     private int idArtista;
     private int idGenero;
@@ -11,7 +11,7 @@ public class ArtistaGenero {
         this.idArtista = idArtista;
         this.idGenero = idGenero;
     }
-//    MÉTODOS GET
+//    MÉTODOS GETTERS E SETTERS
     public int getId() {
         return this.id;
     }

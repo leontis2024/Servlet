@@ -24,7 +24,7 @@ public class Artista {
         this.urlImagem = urlImagem;
     }
 
-//    MÉTODOS GETTERS
+//    MÉTODOS GETTERS E SETTERS
     public int getId() {
         return this.id;
     }
@@ -54,7 +54,7 @@ public class Artista {
         this.urlImagem = urlImagem;
     }
 
-    //    MÉTODO TOSTRING
+//    MÉTODO TOSTRING
     public String toString(){
         return "Id: "+this.id+"\n" +
                 "Nome: "+this.nmArtista+"\n" +

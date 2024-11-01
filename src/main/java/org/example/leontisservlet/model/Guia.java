@@ -1,13 +1,14 @@
 package org.example.leontisservlet.model;
 
 public class Guia {
-//    ATRIBUTOS DA CLASSE GUIA
+//    ATRIBUTOS DA CLASSE
     private int id;
     private int idMuseu;
     private String tituloGuia;
     private String descGuia;
     private String urlImagem;
-//    CONSTRUTOR
+
+//    MÉTODO CONSTRUTOR
     public Guia (int id, int idMuseu, String tituloGuia, String descGuia, String urlImagem){
         this.id = id;
         this.idMuseu = idMuseu;
@@ -15,7 +16,7 @@ public class Guia {
         this.descGuia = descGuia;
         this.urlImagem = urlImagem;
     }
-//    MÉTODOS GET
+//    MÉTODOS GETTERS E SETTERS
     public int getId() {
         return this.id;
     }

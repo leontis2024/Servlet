@@ -1,14 +1,14 @@
 package org.example.leontisservlet.model;
 
 public class ObraGuia {
-    //ATRIBUTOS
+//   ATRIBUTOS DA CLASSE
     private int    nrOrdem;
     private int    idGuia;
     private int    idObra;
     private int    id;
     private String desc_localizacao;
 
-    //MÉTODO CONSTRUTOR
+//    MÉTODO CONSTRUTOR
     public ObraGuia(int nrOrdem, int idGuia, int idObra, int id, String desc_localizacao) {
         this.nrOrdem          = nrOrdem;
         this.idGuia           = idGuia;
@@ -17,7 +17,7 @@ public class ObraGuia {
         this.desc_localizacao = desc_localizacao;
     }
 
-    //GETTERS E SETTERS
+//    MÉTODOS GETTERS E SETTERS
     public int getNrOrdem() {
         return nrOrdem;
     }
@@ -38,7 +38,7 @@ public class ObraGuia {
         return desc_localizacao;
     }
 
-    //TOSTRING
+//    MÉTODO TOSTRING
     public String toString() {
         return "Número da ordem: " + this.nrOrdem + "\n" +
                 "Id do guia: " + this.idGuia + "\n" +
