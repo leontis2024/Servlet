@@ -36,9 +36,9 @@
             <p id="estadoCidade">Estado: <%=museu.getEstado()%>; Cidade: <%=museu.getCidade()%></p>
 
             <div id="diasFunc">
-                <h2 id="titDiasFunc">Dias de Funcionamento:</h2>
+                <h2 id="titDiasFunc">Dias de Funcionamento</h2>
                 <div class="dia">
-                    <h3 class="subtit">Dias:</h3>
+                    <h3 class="subtit">Dias</h3>
                     <%
                         for (int i = 0; i < diasFuncionamento.size(); i++) {
                             String dia = diasFuncionamento.get(i).getDiaSemana();
@@ -61,14 +61,14 @@
                     <%}%>
                 </div>
                 <div class="abertura">
-                    <h3 class="subtit">Abertura:</h3>
+                    <h3 class="subtit">Abertura</h3>
                     <%
                         for (int i = 0; i < diasFuncionamento.size(); i++) {%>
                     <p><%=diasFuncionamento.get(i).getHrInicio()%></p>
                     <%}%>
                 </div>
                 <div class="fechamento">
-                    <h3 class="subtit">Fechamento:</h3>
+                    <h3 class="subtit">Fechamento</h3>
                     <%
                         for (int i = 0; i < diasFuncionamento.size(); i++) {%>
                     <p><%=diasFuncionamento.get(i).getHrTermino()%></p>

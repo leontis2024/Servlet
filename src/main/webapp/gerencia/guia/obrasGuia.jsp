@@ -44,7 +44,7 @@
 
             <div class="selectObra">
 
-                <label for="opcoesObras">Selecione a obra:</label>
+                <label for="opcoesObras">Selecione a obra</label>
                 <%--Setando autofocus no ultimo elemento --%>
                 <select name="obra_<%=i%>" class="opcoesObras" id="opcoesObras" <%=i==qtdObras-1?"autofocus":""%>>
 
@@ -67,7 +67,7 @@
                 </select>
             </div>
             <div class="descCaminhoObra">
-                <label for="caminhoObra">Descreva o caminho para chegar à obra:</label>
+                <label for="caminhoObra">Descreva o caminho para chegar à obra</label>
                 <textarea name="descLoc_<%=i%>" id="caminhoObra" class="caminhoObra"><%=txtDescLoc%></textarea>
             </div>
         </div>

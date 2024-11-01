@@ -31,10 +31,6 @@ public class ArtistaDAO {
                 colunas+=",local_morte";
                 parametros+=",'"+artista.getLocalMorte()+"'";
             }
-            if(!artista.getUrlImagem().isEmpty()){
-                colunas+=",url_imagem";
-                parametros+=",'"+artista.getUrlImagem()+"'";
-            }
 
             //Armazenando um ")" para fechar as colunas e os parâmetros.
             colunas+=")";

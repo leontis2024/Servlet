@@ -29,22 +29,22 @@
 
         <h1 id="titCadastro"><%=(objGuia && guia.getId() > 0) ? ("Atualizando "+ guia.getTituloGuia()) : "Cadastro de Guia"%></h1>
         <div id="nome">
-            <label for="nomeGuia">Tiítulo do Guia:</label>
+            <label for="nomeGuia">Tiítulo do Guia</label>
             <input type="text" name="nomeGuia" id="nomeGuia" size="45" required value="<%=objGuia?guia.getTituloGuia():""%>">
         </div>
 
         <div id="ftGuia">
-            <label for="image">Foto do Guia:</label>
+            <label for="image">Foto do Guia</label>
             <input type="file" name="image" id="image">
         </div>
 
         <div id="desc">
-            <label for="descricao">Descrição:</label>
+            <label for="descricao">Descrição</label>
             <textarea name="descricao" id="descricao"><%=objGuia?guia.getDescGuia():""%></textarea>
         </div>
 
         <div id="finalizar">
-            <input type="submit" name="submit" id="submit" value="enviar" class="botao">
+            <input type="submit" name="submit" id="submit" value="Enviar" class="botao">
         </div>
     </div>
 </form>

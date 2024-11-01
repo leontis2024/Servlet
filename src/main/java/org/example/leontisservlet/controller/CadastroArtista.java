@@ -124,7 +124,7 @@ public class CadastroArtista extends HttpServlet {
                 if(artista != null){
                     //Agora atualizamos a imagem, com base no novo id
                     String urlImagem = ApiImagem.pegarUrlImagem(imagePart,"artista",artista.getId());
-                    if(urlImagem != null){
+                    if(urlImagem != null && !urlImagem.isEmpty()){
                         //Mudando a url no objeto e atualizando no banco
                         artista.setUrlImagem(urlImagem);
                         artistaDAO.alterarUrlImagem(artista.getUrlImagem(),artista.getId());

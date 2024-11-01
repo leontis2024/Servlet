@@ -35,40 +35,40 @@
   <div id="formulario" >
     <h1 id="titCadastro"><%=(objArtista && artista.getId() > 0) ? ("Atualizando "+ artista.getNmArtista()) : "Cadastro de Artista"%></h1>
     <div id="nome">
-      <label for="nomeObra">Nome do Artista:</label>
+      <label for="nomeObra">Nome do Artista</label>
       <input type="text" name="nomeObra" id="nomeObra" size="45" required value="<%=objArtista?artista.getNmArtista():""%>">
     </div>
 
     <div id="inicioProd">
-      <label for="nascimento">Nascimento:</label>
+      <label for="nascimento">Nascimento</label>
       <input type="date" name="nascimento" id="nascimento" required value="<%=objArtista?artista.getDtNascArtista():""%>">
     </div>
 
     <div id="fimProd">
-      <label for="falecimento">Falecimento:</label>
+      <label for="falecimento">Falecimento</label>
       <input type="date" name="falecimento" id="falecimento" value="<%=objArtista?artista.getDtFalecimento():""%>">
     </div>
 
     <div id="ftArtista">
-      <label for="image">Foto do artista:</label>
+      <label for="image">Foto do artista</label>
       <input type="file" name="image" id="image">
     </div>
 
     <div id="desc">
-      <label for="descricao">Descrição:</label>
+      <label for="descricao">Descrição</label>
       <textarea name="descricao" id="descricao" cols="60" rows="5"><%=objArtista?artista.getDescArtista():""%></textarea>
     </div>
     <div id="localNasc">
-      <label for="local_nascimento">Local de Nascimento:</label>
+      <label for="local_nascimento">Local de Nascimento</label>
       <input type="text" name="local_nascimento" id="local_nascimento" size="45" required value="<%=objArtista?artista.getLocalNasc():""%>">
     </div>
     <div id="localMorte">
-      <label for="local_morte">Local de Falecimento:</label>
+      <label for="local_morte">Local de Falecimento</label>
       <input type="text" name="local_morte" id="local_morte" size="45" value="<%=objArtista?artista.getLocalMorte():""%>">
     </div>
 
     <div id="genero">
-      <label for="generoArtista">Gêneros Principais:</label>
+      <label for="generoArtista">Gêneros Principais</label>
       <%
         LinkedList<Integer> idsGenerosSelecionados = new LinkedList<>();
         if(objGenerosArtista){
@@ -89,7 +89,7 @@
     </div>
 
     <div id="finalizar">
-      <input type="submit" name="submit" id="submit" value="enviar" class="botao">
+      <input type="submit" name="submit" id="submit" value="Enviar" class="botao">
     </div>
   </div>
 </form>

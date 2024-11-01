@@ -13,17 +13,13 @@ public class GuiaDAO {
             String colunas = "(id_museu, titulo_guia";
 
             //Armazenando a quantidade de colunas obrigatórias, com "?" para chamar no insert futuramente.
-            String parametros = "(?,?,?";
+            String parametros = "(?,?";
 
             //Verificando as colunas que são opcionais, se não forem nulas, vai adicionar o nome da sua coluna na variável "colunas", e
             //uma vírgula e o seu valor na variável "parametros".
             if (!guia.getDescGuia().isEmpty()) {
                 colunas += ",desc_guia";
                 parametros += ",'" + guia.getDescGuia() + "'";
-            }
-            if (!guia.getUrlImagem().isEmpty()) {
-                colunas += ",url_imagem";
-                parametros += ",'" + guia.getUrlImagem() + "'";
             }
 
             //Armazenando um ")" para fechar as colunas e os parâmetros.
@@ -111,6 +107,7 @@ public class GuiaDAO {
             //Abrindo uma conexão com o banco de dados.
             Connection conn = conexao.conectar();
             PreparedStatement pstmt = conn.prepareStatement("DELETE FROM guia WHERE id = ?");
+            pstmt.setInt(1,id);
             if (pstmt.executeUpdate() > 0) {
                 return 1;
             } else {

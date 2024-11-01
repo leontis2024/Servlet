@@ -191,7 +191,7 @@ public class CadastroMuseu extends HttpServlet {
             if(museu != null){
                 //Agora atualizamos a imagem, com base no novo id
                 String urlImagem = ApiImagem.pegarUrlImagem(imagePart,"museu",museu.getId());
-                if(urlImagem != null){
+                if(urlImagem != null && !urlImagem.isEmpty()){
                    //Mudando a url no objeto e atualizando no banco
                     museu.setUrlImagem(urlImagem);
                     museuDAO.alterarUrlImagem(museu.getUrlImagem(),museu.getId());

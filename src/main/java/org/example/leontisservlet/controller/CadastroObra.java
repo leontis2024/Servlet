@@ -117,7 +117,7 @@ public class CadastroObra extends HttpServlet {
                 if(obra != null){
                     //Agora atualizamos a imagem, com base no novo id
                     String urlImagem = ApiImagem.pegarUrlImagem(imagePart,"obra",obra.getId());
-                    if(urlImagem != null){
+                    if(urlImagem != null && !urlImagem.isEmpty()){
                         //Mudando a url no objeto e atualizando no banco
                         obra.setUrlImagem(urlImagem);
                         obraDAO.alterarUrlImagem(obra.getUrlImagem(),obra.getId());

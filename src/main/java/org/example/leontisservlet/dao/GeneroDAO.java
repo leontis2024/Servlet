@@ -26,10 +26,6 @@ public class GeneroDAO {
                 colunas+=",desc_genero";
                 parametros+=",'"+genero.getUrlImagem()+"'";
             }
-            if(genero.getUrlImagem().isEmpty()){
-                colunas+=",url_imagem";
-                parametros+=",'"+genero.getUrlImagem()+"'";
-            }
 
             //Armazenando um ")" para fechar as colunas e os parâmetros.
             colunas +=")";

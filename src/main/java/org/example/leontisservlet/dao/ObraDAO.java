@@ -16,10 +16,6 @@ public class ObraDAO {
                 colunas+=",desc_obra";
                 parametros+= ",'"+obra.getDescObra()+"'";
             }
-            if(obra.getUrlImagem() != null){
-                colunas+=",url_imagem";
-                parametros+=",'"+obra.getUrlImagem()+"'";
-            }
             colunas += ")";
             parametros+=")";
             Connection conn = conexao.conectar();

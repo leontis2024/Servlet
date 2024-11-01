@@ -25,10 +25,7 @@ public class MuseuDAO {
                 colunas+=",nr_tel_museu";
                 parametros+=",'"+museu.getNrTelMuseu()+"'";
             }
-            if(!museu.getUrlImagem().isEmpty()){
-                colunas+=",url_imagem";
-                parametros+=",'"+museu.getUrlImagem()+"'";
-            }
+
             colunas +=")";
             parametros+=")";
 //            Fazendo a conexao

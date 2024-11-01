@@ -10,11 +10,12 @@ public class ObraGuiaDAO {
         Conexao conexao = new Conexao();
         try{
             Connection conn = conexao.conectar();
-            String insert = "INSERT INTO obra_guia (nr_ordem, id_guia, id_obra) VALUES (?,?,?)";
+            String insert = "INSERT INTO obra_guia (nr_ordem, id_guia, id_obra, desc_localizacao) VALUES (?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(insert);
             pstmt.setInt(1,obraGuia.getNrOrdem());
             pstmt.setInt(2,obraGuia.getIdGuia());
             pstmt.setInt(3,obraGuia.getIdObra());
+            pstmt.setString(4,obraGuia.getDesc_localizacao());
             if(pstmt.executeUpdate() > 0){
                 return 1;
             }else {
@@ -30,18 +31,18 @@ public class ObraGuiaDAO {
     //</editor-fold>
 
     //<editor-fold desc="Método alterar">
-    public int alterar(ObraGuia obraGuia,int id, int nr_ordem){
+    public int alterar(ObraGuia obraGuia,int idGuia, int nrOrdem){
         Conexao conexao = new Conexao();
         try{
             Connection conn = conexao.conectar();
-            String update = "UPDATE obra_guia SET nr_ordem = ?, id_guia = ?, id_obra = ?, desc_localizacao = ? WHERE id = ? AND nr_ordem = ?";
+            String update = "UPDATE obra_guia SET nr_ordem = ?, id_guia = ?, id_obra = ?, desc_localizacao = ? WHERE id_guia = ? AND nr_ordem = ?";
             PreparedStatement pstmt = conn.prepareStatement(update);
             pstmt.setInt(1, obraGuia.getNrOrdem());
             pstmt.setInt(2, obraGuia.getIdGuia());
             pstmt.setInt(3, obraGuia.getIdObra());
             pstmt.setString(4, obraGuia.getDesc_localizacao());
-            pstmt.setInt(5,id);
-            pstmt.setInt(6,nr_ordem);
+            pstmt.setInt(5,idGuia);
+            pstmt.setInt(6,nrOrdem);
             if(pstmt.executeUpdate() > 0){
                 return 1;
             }else {
@@ -57,12 +58,12 @@ public class ObraGuiaDAO {
     //</editor-fold>
 
     //<editor-fold desc="Método remover">
-    public int remover(int id, int nrOrdem){
+    public int remover(int idGuia, int nrOrdem){
         Conexao conexao = new Conexao();
         try{
             Connection conn = conexao.conectar();
-            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM obra_guia WHERE id = ? AND nr_ordem = ?");
-            pstmt.setInt(1,id);
+            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM obra_guia WHERE id_guia = ? AND nr_ordem = ?");
+            pstmt.setInt(1,idGuia);
             pstmt.setInt(2,nrOrdem);
             if(pstmt.executeUpdate() > 0){
                 return 1;

@@ -34,7 +34,7 @@ public class AlterarSenhaAdm extends HttpServlet {
             request.setAttribute("erro","A nova senha não pode ser igual a senha padrão.");
             request.getRequestDispatcher("museu/alterarSenha.jsp").forward(request, response);
         }else if(!Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$").matcher(novaSenha).matches()){
-            request.setAttribute("erro", "A nova senha deve ter pelo menos 8 digitos, um número, uma letra maiuscula e um simbolo.");
+            request.setAttribute("erro", "A nova senha deve ter pelo menos 8 dígitos, uma letra maiúscula e um símbolo.");
             request.getRequestDispatcher("museu/alterarSenha.jsp").forward(request, response);
         }else{
             //Alterando a senha no banco

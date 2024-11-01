@@ -89,7 +89,7 @@ public class CadastroGuia extends HttpServlet {
             if(guia != null){
                 //Agora atualizamos a imagem, com base no novo id
                 String urlImagem = ApiImagem.pegarUrlImagem(imagePart,"guia",guia.getId());
-                if(urlImagem != null){
+                if(urlImagem != null && !urlImagem.isEmpty()){
                     //Mudando a url no objeto e atualizando no banco
                     guia.setUrlImagem(urlImagem);
                     guiaDAO.alterarUrlImagem(guia.getUrlImagem(),guia.getId());

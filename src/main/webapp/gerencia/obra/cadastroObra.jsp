@@ -41,32 +41,32 @@
 
         </h1>
         <div id="nome">
-            <label for="nomeObra">Nome da Obra:</label>
+            <label for="nomeObra">Nome da Obra</label>
             <input type="text" name="nomeObra" id="nomeObra" size="45" required value="<%=objObra?obra.getNmObra():""%>">
         </div>
 
         <div id="inicioProd">
-            <label for="ano_inicio">Início da Produção:</label>
+            <label for="ano_inicio">Início da Produção</label>
             <input type="number" name="ano_inicio" id="ano_inicio" min="0" max="2024" placeholder="Ano de início" required value="<%=objObra?obra.getAnoInicio():""%>">
         </div>
 
         <div id="fimProd">
-            <label for="ano_termino">Fim da Produção:</label>
+            <label for="ano_termino">Fim da Produção</label>
             <input type="number" name="ano_termino" id="ano_termino" min="0" max="2024" placeholder="Ano de finalização" required value="<%=objObra?obra.getAnoFinal():""%>">
         </div>
 
         <div id="ftObra">
-            <label for="image">Foto da Obra:</label>
+            <label for="image">Foto da Obra</label>
             <input type="file" name="image" id="image">
         </div>
 
         <div id="desc">
-            <label for="descricao">Descrição:</label>
+            <label for="descricao">Descrição</label>
             <textarea name="descricao" id="descricao" cols="60" rows="5" ><%=objObra?obra.getDescObra():""%></textarea>
         </div>
 
         <div id="genero">
-            <label for="generoObra">Gênero:</label>
+            <label for="generoObra">Gênero</label>
             <%
                 int idGeneroSelecionado = objGenero? genero.getId():-1;
             %>
@@ -84,7 +84,7 @@
             System.out.println(idArtistaSelecionado);
         %>
         <div id="autor">
-            <label for="artistaObra">Autor:</label>
+            <label for="artistaObra">Autor</label>
             <select name="artistaObra" id="artistaObra" required size="4">
                 <%
                     for (int i = 0; i < artistas.size(); i++) {
@@ -95,7 +95,7 @@
         </div>
 
         <div id="finalizar">
-            <input type="submit" name="submit" id="submit" value="enviar" class="botao">
+            <input type="submit" name="submit" id="submit" value="Enviar" class="botao">
         </div>
     </div>
 </form>

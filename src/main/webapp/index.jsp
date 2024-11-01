@@ -26,17 +26,17 @@
 
 <div id="login">
     <div id="formulario">
-        <h2 id="titulo">Fazer Login:</h2>
+        <h2 id="titulo">Login</h2>
 
         <form action="login-adm" method="post">
             <div id="inputEmail">
-                <label for="email">E-mail:</label>
+                <label for="email">E-mail</label>
                 <input type="email" name="email" id="email" placeholder="Digite o e-mail da empresa" size="45" required>
             </div>
 
             <div id="inputSenha">
-                <label for="pwd">Senha:</label>
-                <input type="password" name="passwd" id="pwd" placeholder="XXXXXXXXX" size="45" required>
+                <label for="pwd">Senha</label>
+                <input type="password" name="passwd" id="pwd" placeholder="Digite a senha da empresa" size="45" required>
                 <%
                     if(request.getAttribute("erro") != null){
                 %>

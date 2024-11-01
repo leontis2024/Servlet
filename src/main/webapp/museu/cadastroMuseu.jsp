@@ -195,7 +195,7 @@
         </div>
 
        <div id="finalizar">
-            <input type="submit" name="submit" id="submit" value="enviar" class="botao">
+            <input type="submit" name="submit" id="submit" value="Enviar" class="botao">
        </div>
     </div>
 </form>
