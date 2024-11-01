@@ -30,6 +30,14 @@ input, textarea, select, option {
     padding: 1px 3px;
 }
 
+input, select, option {
+    width: 20vw;
+}
+
+textarea, #ruaDiv > input, #pontoRefDiv > input {
+    width: 43vw;
+}
+
 #titCadastro {
     font-size: 50px;
     font-weight: 600;
@@ -130,12 +138,12 @@ input, textarea, select, option {
 }
 
 input[type="time"] {
-    width: 80px;
+    width: 6vw;
     text-align: center;
 }
 
 input[type="number"] {
-    width: 90px;
+    width: 6vw;
     text-align: center;
 }
 

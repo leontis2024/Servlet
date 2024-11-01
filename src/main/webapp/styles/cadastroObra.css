@@ -29,6 +29,14 @@ input, textarea, select, option {
     padding: 1px 3px;
 }
 
+input {
+    width: 20vw;
+}
+
+textarea, select, option {
+    width: 43vw;
+}
+
 #titCadastro {
     font-size: 50px;
     font-weight: 600;

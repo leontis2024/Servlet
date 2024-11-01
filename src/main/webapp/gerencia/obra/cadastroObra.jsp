@@ -96,7 +96,6 @@
 
         <div id="finalizar">
             <input type="submit" name="submit" id="submit" value="enviar" class="botao">
-            <input type="reset" name="reset" id="reset" class="botao">
         </div>
     </div>
 </form>
