@@ -32,11 +32,11 @@ public class CadastroObrasGuia extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Pegando ids e quantidade de obras
-        int id_museu_adm;
+        int idAdm;
         int idGuia;
         int qtdObras; //Usada para sabermos quantas obras vao ter no guia ao inserir e na pagina
         try{
-            id_museu_adm = Integer.parseInt(request.getParameter("id_museu_adm"));
+            idAdm = Integer.parseInt(request.getParameter("id_museu_adm"));
             idGuia = Integer.parseInt(request.getParameter("id_guia"));
             qtdObras = Integer.parseInt(request.getParameter("qtdObras"));
         }catch(Exception e){
@@ -46,7 +46,7 @@ public class CadastroObrasGuia extends HttpServlet {
 
         //Buscando pelo museu
         MuseuDAO museuDAO = new MuseuDAO();
-        ResultSet rsMuseu = museuDAO.buscarPorIdMuseuAdm(id_museu_adm);
+        ResultSet rsMuseu = museuDAO.buscarPorIdMuseuAdm(idAdm);
         Museu museu = MetodosAuxiliares.pegarMuseu(rsMuseu);
         //Vendo se nao deu algum erro
         if(museu != null){
@@ -104,7 +104,7 @@ public class CadastroObrasGuia extends HttpServlet {
                         LinkedList<Obra> obrasCatalogo = MetodosAuxiliares.listarObras(rsObra);
 
                         //enviando atributos e voltando para pagina
-                        request.setAttribute("id_museu_adm",id_museu_adm);
+                        request.setAttribute("id_museu_adm",idAdm);
                         request.setAttribute("museu",museu);
                         request.setAttribute("guia",guia);
                         request.setAttribute("obrasGuia",obrasGuia);
@@ -113,10 +113,12 @@ public class CadastroObrasGuia extends HttpServlet {
                         request.getRequestDispatcher("gerencia/guia/obrasGuia.jsp").forward(request,response);
                     }
                 }
+            }else {
+                request.getRequestDispatcher("erros/paginaErro.jsp").forward(request, response);
             }
+        }else {
+            request.getRequestDispatcher("erros/paginaErro.jsp").forward(request, response);
         }
-
-
 
     }
 }

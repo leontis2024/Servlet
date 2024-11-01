@@ -29,9 +29,9 @@ public class CadastroObra extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Pegando id do adm
-        int id_museu_adm;
+        int idAdm;
         try{
-            id_museu_adm = Integer.parseInt(request.getParameter("id_museu_adm"));
+            idAdm = Integer.parseInt(request.getParameter("id_museu_adm"));
         } catch (NumberFormatException e) {
             request.getRequestDispatcher("erros/paginaErro.jsp").forward(request, response);
             return;
@@ -89,7 +89,7 @@ public class CadastroObra extends HttpServlet {
 
         //Buscando pelo museu
         MuseuDAO museuDAO = new MuseuDAO();
-        ResultSet rsMuseu = museuDAO.buscarPorIdMuseuAdm(id_museu_adm);
+        ResultSet rsMuseu = museuDAO.buscarPorIdMuseuAdm(idAdm);
         Museu museu = MetodosAuxiliares.pegarMuseu(rsMuseu);
         if(museu != null){
             //A url_imagem é vazia por agora, pois iremos altera-la depois de inserir
@@ -116,10 +116,10 @@ public class CadastroObra extends HttpServlet {
                 Obra obra = MetodosAuxiliares.pegarObra(rsObras);
                 if(obra != null){
                     //Agora atualizamos a imagem, com base no novo id
-                    String url_imagem = ApiImagem.pegarUrlImagem(imagePart,"obra",obra.getId());
-                    if(url_imagem != null){
+                    String urlImagem = ApiImagem.pegarUrlImagem(imagePart,"obra",obra.getId());
+                    if(urlImagem != null){
                         //Mudando a url no objeto e atualizando no banco
-                        obra.setUrlImagem(url_imagem);
+                        obra.setUrlImagem(urlImagem);
                         obraDAO.alterarUrlImagem(obra.getUrlImagem(),obra.getId());
                     }
 
@@ -127,7 +127,7 @@ public class CadastroObra extends HttpServlet {
                     request.setAttribute("artista",artistaObra);
                     request.setAttribute("obra",obra);
                     request.setAttribute("genero",generoObra);
-                    request.setAttribute("id_museu_adm",id_museu_adm);
+                    request.setAttribute("id_museu_adm",idAdm);
                     request.setAttribute("museu",museu);
                     request.getRequestDispatcher("gerencia/obra/obraInfo.jsp").forward(request,response);
                 }else{

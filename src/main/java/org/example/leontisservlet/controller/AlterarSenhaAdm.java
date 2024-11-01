@@ -18,9 +18,9 @@ public class AlterarSenhaAdm extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Pegando id do adm
-        int id_museu_adm;
+        int idAdm;
         try{
-            id_museu_adm = Integer.parseInt(request.getParameter("id_museu_adm"));
+            idAdm = Integer.parseInt(request.getParameter("id_museu_adm"));
         } catch (NumberFormatException e) {
             request.getRequestDispatcher("erros/paginaErro.jsp").forward(request, response);
             return;
@@ -28,7 +28,7 @@ public class AlterarSenhaAdm extends HttpServlet {
 
         String novaSenha = request.getParameter("novaSenha");
 
-        request.setAttribute("id_museu_adm",id_museu_adm);
+        request.setAttribute("id_museu_adm", idAdm);
         //Vendo se não é a senha padrão
         if(novaSenha.equals(System.getenv("ADM_DEFAULT_PASSWD"))){
             request.setAttribute("erro","A nova senha não pode ser igual a senha padrão.");
@@ -39,9 +39,9 @@ public class AlterarSenhaAdm extends HttpServlet {
         }else{
             //Alterando a senha no banco
             MuseuAdmDAO museuAdmDAO = new MuseuAdmDAO();
-            museuAdmDAO.alterarSenha(novaSenha,id_museu_adm);
+            museuAdmDAO.alterarSenha(novaSenha, idAdm);
             ApiLoginAdm apiLoginAdm = new ApiLoginAdm();
-            ResultSet rsMuseuAdm = museuAdmDAO.buscarPorId(id_museu_adm);
+            ResultSet rsMuseuAdm = museuAdmDAO.buscarPorId(idAdm);
             try{
                 if(rsMuseuAdm.next()){
                     //Adicionando o usuario, com a senha correta, na api e enviando para tela de cadastro

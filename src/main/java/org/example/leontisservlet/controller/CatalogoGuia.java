@@ -20,9 +20,9 @@ import java.util.LinkedList;
 public class CatalogoGuia extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //Pegando id do adm
-        int id_museu_adm;
+        int idAdm;
         try{
-            id_museu_adm = Integer.parseInt(request.getParameter("id_museu_adm"));
+            idAdm = Integer.parseInt(request.getParameter("id_museu_adm"));
         } catch (NumberFormatException e) {
             request.getRequestDispatcher("erros/paginaErro.jsp").forward(request, response);
             return;
@@ -31,12 +31,12 @@ public class CatalogoGuia extends HttpServlet {
         //Pegando museu
         MuseuDAO museuDAO = new MuseuDAO();
         GuiaDAO guiaDAO = new GuiaDAO();
-        ResultSet rsMuseu = museuDAO.buscarPorIdMuseuAdm(id_museu_adm);
+        ResultSet rsMuseu = museuDAO.buscarPorIdMuseuAdm(idAdm);
         Museu museu = MetodosAuxiliares.pegarMuseu(rsMuseu);
         if(museu != null){
             //Listando guias do museu e enviando
-            int id_museu = museu.getId();
-            ResultSet rsGuias = guiaDAO.buscarPorIdMuseu(id_museu);
+            int idMuseu = museu.getId();
+            ResultSet rsGuias = guiaDAO.buscarPorIdMuseu(idMuseu);
             LinkedList<Guia> guias = MetodosAuxiliares.listarGuias(rsGuias);
             //Vendo se nao deu algum erro
             if(guias != null){

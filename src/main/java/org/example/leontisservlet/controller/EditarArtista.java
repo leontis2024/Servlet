@@ -20,10 +20,10 @@ public class EditarArtista extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Pegando id do adm
-        int id_museu_adm;
+        int idAdm;
         int idArtista;
         try{
-            id_museu_adm = Integer.parseInt(request.getParameter("id_museu_adm"));
+            idAdm = Integer.parseInt(request.getParameter("id_museu_adm"));
             idArtista = Integer.parseInt(request.getParameter("id_artista"));
         } catch (NumberFormatException e) {
             request.getRequestDispatcher("erros/paginaErro.jsp").forward(request, response);
@@ -33,7 +33,7 @@ public class EditarArtista extends HttpServlet {
 
         //Buscando museu
         MuseuDAO museuDAO = new MuseuDAO();
-        ResultSet rsMuseu = museuDAO.buscarPorIdMuseuAdm(id_museu_adm);
+        ResultSet rsMuseu = museuDAO.buscarPorIdMuseuAdm(idAdm);
         Museu museu = MetodosAuxiliares.pegarMuseu(rsMuseu);
         //Vendo se nao deu algum erro
         if(museu != null){
@@ -79,7 +79,7 @@ public class EditarArtista extends HttpServlet {
             //</editor-fold>
 
             //enviando atributos para tela de cadastro
-            request.setAttribute("id_museu_adm",id_museu_adm);
+            request.setAttribute("id_museu_adm", idAdm);
             request.setAttribute("museu",museu);
             request.setAttribute("generos",generos);
             request.setAttribute("artista",artista);

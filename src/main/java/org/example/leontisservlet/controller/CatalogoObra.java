@@ -20,9 +20,9 @@ public class CatalogoObra extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Pegando id do adm
-        int id_museu_adm;
+        int idAdm;
         try{
-            id_museu_adm = Integer.parseInt(request.getParameter("id_museu_adm"));
+            idAdm = Integer.parseInt(request.getParameter("id_museu_adm"));
         } catch (NumberFormatException e) {
             request.getRequestDispatcher("erros/paginaErro.jsp").forward(request, response);
             return;
@@ -31,12 +31,12 @@ public class CatalogoObra extends HttpServlet {
         //Pegando museu
         MuseuDAO museuDAO = new MuseuDAO();
         ObraDAO obraDAO = new ObraDAO();
-        ResultSet rsMuseu = museuDAO.buscarPorIdMuseuAdm(id_museu_adm);
+        ResultSet rsMuseu = museuDAO.buscarPorIdMuseuAdm(idAdm);
         Museu museu = MetodosAuxiliares.pegarMuseu(rsMuseu);
         if(museu!=null){
             //Listando obras e enviando
-            int id_museu = museu.getId();
-            ResultSet rsObras = obraDAO.buscarPorIdMuseu(id_museu);
+            int idMuseu = museu.getId();
+            ResultSet rsObras = obraDAO.buscarPorIdMuseu(idMuseu);
             LinkedList<Obra> obras = MetodosAuxiliares.listarObras(rsObras);
             //Vendo se nao deu algum erro
             if(obras != null){

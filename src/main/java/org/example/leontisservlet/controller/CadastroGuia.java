@@ -31,9 +31,9 @@ public class CadastroGuia extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Pegando id do adm
-        int id_museu_adm;
+        int idAdm;
         try{
-            id_museu_adm = Integer.parseInt(request.getParameter("id_museu_adm"));
+            idAdm = Integer.parseInt(request.getParameter("id_museu_adm"));
         } catch (NumberFormatException e) {
             request.getRequestDispatcher("erros/paginaErro.jsp").forward(request, response);
             return;
@@ -59,7 +59,7 @@ public class CadastroGuia extends HttpServlet {
 
         //Buscando museu
         MuseuDAO museuDAO = new MuseuDAO();
-        ResultSet rsMuseu = museuDAO.buscarPorIdMuseuAdm(id_museu_adm);
+        ResultSet rsMuseu = museuDAO.buscarPorIdMuseuAdm(idAdm);
         Museu museu = MetodosAuxiliares.pegarMuseu(rsMuseu);
         //Vendo se nao deu algum erro
         if(museu != null){
@@ -88,10 +88,10 @@ public class CadastroGuia extends HttpServlet {
             Guia guia = MetodosAuxiliares.pegarGuia(rsGuia);
             if(guia != null){
                 //Agora atualizamos a imagem, com base no novo id
-                String url_imagem = ApiImagem.pegarUrlImagem(imagePart,"guia",guia.getId());
-                if(url_imagem != null){
+                String urlImagem = ApiImagem.pegarUrlImagem(imagePart,"guia",guia.getId());
+                if(urlImagem != null){
                     //Mudando a url no objeto e atualizando no banco
-                    guia.setUrlImagem(url_imagem);
+                    guia.setUrlImagem(urlImagem);
                     guiaDAO.alterarUrlImagem(guia.getUrlImagem(),guia.getId());
                 }
 

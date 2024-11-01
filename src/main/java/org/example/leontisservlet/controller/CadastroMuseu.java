@@ -27,9 +27,9 @@ public class CadastroMuseu extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Pegando id do adm
-        int id_museu_adm;
+        int idAdm;
         try{
-            id_museu_adm = Integer.parseInt(request.getParameter("id_museu_adm"));
+            idAdm = Integer.parseInt(request.getParameter("id_museu_adm"));
         } catch (NumberFormatException e) {
             request.getRequestDispatcher("erros/paginaErro.jsp").forward(request, response);
             return;
@@ -152,7 +152,7 @@ public class CadastroMuseu extends HttpServlet {
 
         //Declarando objeto de museu a ser inserido
         //A url_imagem é vazia por agora, pois iremos altera-la depois de inserir
-        Museu museuInsert = new Museu(id_museu,nome,desc,rua,estado,cidade,pontoRef,cep,dtInauguracao,telefone,"",cnpj,id_museu_adm);
+        Museu museuInsert = new Museu(id_museu,nome,desc,rua,estado,cidade,pontoRef,cep,dtInauguracao,telefone,"",cnpj,idAdm);
         //Caso todos os valores sejam validos, podemos executar o codigo
         if(cepMtch.matches() && cnpjMtch.matches() && telMtch.matches()){
             //Arrumando os valores para inserirmos somente numeros no banco
@@ -190,10 +190,10 @@ public class CadastroMuseu extends HttpServlet {
             //Validando para sabermos se tudo deu certo
             if(museu != null){
                 //Agora atualizamos a imagem, com base no novo id
-                String url_imagem = ApiImagem.pegarUrlImagem(imagePart,"museu",museu.getId());
-                if(url_imagem != null){
+                String urlImagem = ApiImagem.pegarUrlImagem(imagePart,"museu",museu.getId());
+                if(urlImagem != null){
                    //Mudando a url no objeto e atualizando no banco
-                    museu.setUrlImagem(url_imagem);
+                    museu.setUrlImagem(urlImagem);
                     museuDAO.alterarUrlImagem(museu.getUrlImagem(),museu.getId());
                 }
 
@@ -241,7 +241,7 @@ public class CadastroMuseu extends HttpServlet {
 
             //<editor-fold desc="Atributos">
             request.setAttribute("museu",museuInsert);
-            request.setAttribute("id_museu_adm",id_museu_adm);
+            request.setAttribute("id_museu_adm",idAdm);
             request.setAttribute("domingo",domingo);
             request.setAttribute("segunda",segunda);
             request.setAttribute("terca",terca);

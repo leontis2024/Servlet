@@ -40,11 +40,14 @@
     <link rel="shortcut icon" href="Resources/leon.png" type="image/jpg">
 </head>
 <body>
-<nav id="navbar">
-    <a href="index.jsp" id="leon"><img src="Resources/leon.png"></a>
-
-</nav>
-
+<%--Só mostra a navbar se tiver um museu, caso contratio, nao.--%>
+<%if(objMuseu){%>
+    <jsp:include page="../navbarMuseu.jsp"></jsp:include>
+<%}else{%>
+    <nav id="navbar">
+        <a href="index.jsp" id="leon"><img src="Resources/leon.png"></a>
+    </nav>
+<%}%>
 <form action="cadastro-museu" method="post" enctype="multipart/form-data">
     <input type="text" name="id_museu_adm" value="<%=request.getAttribute("id_museu_adm")%>" style="display: none">
     <input type="text" name="id_museu" value="<%=objMuseu ? museu.getId() : -1%>" style="display: none">

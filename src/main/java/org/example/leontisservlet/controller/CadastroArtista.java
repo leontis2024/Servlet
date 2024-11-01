@@ -35,9 +35,9 @@ public class CadastroArtista extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Pegando id do adm
-        int id_museu_adm;
+        int idAdm;
         try{
-            id_museu_adm = Integer.parseInt(request.getParameter("id_museu_adm"));
+            idAdm = Integer.parseInt(request.getParameter("id_museu_adm"));
         } catch (NumberFormatException e) {
             request.getRequestDispatcher("erros/paginaErro.jsp").forward(request, response);
             return;
@@ -91,7 +91,7 @@ public class CadastroArtista extends HttpServlet {
 
         //Buscando pelo museu
         MuseuDAO museuDAO = new MuseuDAO();
-        ResultSet rsMuseu = museuDAO.buscarPorIdMuseuAdm(id_museu_adm);
+        ResultSet rsMuseu = museuDAO.buscarPorIdMuseuAdm(idAdm);
         Museu museu = MetodosAuxiliares.pegarMuseu(rsMuseu);
         if(museu != null){
             //Criando artista
@@ -123,10 +123,10 @@ public class CadastroArtista extends HttpServlet {
                 //Validando se não é nulo
                 if(artista != null){
                     //Agora atualizamos a imagem, com base no novo id
-                    String url_imagem = ApiImagem.pegarUrlImagem(imagePart,"artista",artista.getId());
-                    if(url_imagem != null){
+                    String urlImagem = ApiImagem.pegarUrlImagem(imagePart,"artista",artista.getId());
+                    if(urlImagem != null){
                         //Mudando a url no objeto e atualizando no banco
-                        artista.setUrlImagem(url_imagem);
+                        artista.setUrlImagem(urlImagem);
                         artistaDAO.alterarUrlImagem(artista.getUrlImagem(),artista.getId());
                     }
                     //Inserindo generos do artista
@@ -138,7 +138,7 @@ public class CadastroArtista extends HttpServlet {
 
                     //enviando os atributos e indo para tela de informações do artista inserido
                     request.setAttribute("artista",artista);
-                    request.setAttribute("id_museu_adm",id_museu_adm);
+                    request.setAttribute("id_museu_adm",idAdm);
                     request.setAttribute("museu",museu);
                     request.getRequestDispatcher("gerencia/artista/artistaInfo.jsp").forward(request,response);
                 }else{
@@ -153,7 +153,7 @@ public class CadastroArtista extends HttpServlet {
                     return;
                 }
                 //Reenviando para pagina de cadastro com um erro
-                request.setAttribute("id_museu_adm",id_museu_adm);
+                request.setAttribute("id_museu_adm",idAdm);
                 request.setAttribute("museu",museu);
                 request.setAttribute("generos",generos);
                 request.setAttribute("artista",artistaInsert);

@@ -23,10 +23,10 @@ public class ExcluirGuia extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Pegando id do adm
-        int id_museu_adm;
+        int idAdm;
         int idGuia;
         try{
-            id_museu_adm = Integer.parseInt(request.getParameter("id_museu_adm"));
+            idAdm = Integer.parseInt(request.getParameter("id_museu_adm"));
             idGuia = Integer.parseInt(request.getParameter("id_guia"));
         } catch (NumberFormatException e) {
             request.getRequestDispatcher("erros/paginaErro.jsp").forward(request, response);
@@ -35,7 +35,7 @@ public class ExcluirGuia extends HttpServlet {
 
         //Buscando museu
         MuseuDAO museuDAO = new MuseuDAO();
-        ResultSet rsMuseu = museuDAO.buscarPorIdMuseuAdm(id_museu_adm);
+        ResultSet rsMuseu = museuDAO.buscarPorIdMuseuAdm(idAdm);
         Museu museu = MetodosAuxiliares.pegarMuseu(rsMuseu);
         //Vendo se nao deu algum erro
         if(museu != null){
@@ -50,8 +50,8 @@ public class ExcluirGuia extends HttpServlet {
                 return;
             }
             //Listando guias e enviando
-            int id_museu = museu.getId();
-            ResultSet rsGuias = guiaDAO.buscarPorIdMuseu(id_museu);
+            int idMuseu = museu.getId();
+            ResultSet rsGuias = guiaDAO.buscarPorIdMuseu(idMuseu);
             LinkedList<Guia> guias = MetodosAuxiliares.listarGuias(rsGuias);
             //Vendo se nao deu algum erro
             if(guias != null){
