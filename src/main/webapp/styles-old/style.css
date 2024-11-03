@@ -1,0 +1,178 @@
+@font-face {
+    font-family: quicksand;
+    src: url(../Resources/Quicksand/Quicksand-VariableFont_wght.ttf);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F5E0D4;
+}
+
+* {
+    font-family: quicksand;
+    font-weight: 500;
+    margin: 0%;
+    padding: 0%;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.assunto {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* navbar utilizada na landing page */
+#navbar {
+    width: 100vw;
+    height: 70px;
+    background-color: #7C3939;
+    position: fixed;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    box-shadow: 0px 0px 15px 0px black;
+    z-index: 100;
+    transition: 0.5s;
+}
+
+#leon {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: 10px;
+}
+
+#leon > img {
+    width: 70px;
+    height: 70px;
+}
+
+#links {
+    width: 60vw;
+    position: relative;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+#links > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    padding: 0% 2%;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: #F5E0D4;
+    border-radius: 0px 0px 10px 10px;
+    transition: 0.5s;
+}
+
+#links > a:hover {
+    color: #7C3939;
+    background-color: #F5E0D4;
+    box-shadow: 0px 0px 8px 0px black;
+    transform: scale(1.03);
+}
+
+/* Nossos Contatos */
+#nossosCont{
+    width: 1536px;
+    height: 20vh;
+    background-color: #202933;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#nossosCont>hr{
+    height: 307.2px;
+}
+
+#imgFooter{
+    height: 102.2px;
+    width: 107.52px;
+}
+
+.leontisFooter{
+    color: #F5E0D4;
+    justify-self: left;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.linkIntegrantes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.linkIntegrantes ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.linkIntegrantes ul li{
+    margin: 0.5vh 0.5vw 0.5vh 0;
+    list-style: none;
+}
+
+.imagemFooter{
+    background-image: url('../Resources/Instagram.png');
+    background-size: cover;
+    height: 48px;
+    width: 48px;
+    transition: 0.5s ;
+}
+
+.imagemFooter:hover{
+    background-image: url('../Resources/InstagramHover.png');
+    transition: 0.5s;
+}
+
+.mailFooter{
+    background-image: url('../Resources/Mail.png');
+    background-size: cover;
+    height: 48px;
+    width: 48px;
+    transition: 0.5s ;
+}
+
+.mailFooter:hover{
+    background-image: url('../Resources/MailHover.png');
+    transition: 0.5s;
+}
+
+.linkIntegrantes > h1{
+    color: #F5E0D4;
+    font-size: 30px;
+    transition: 0.5s;
+}
+
+.linksFooter{
+    color: #F5E0D4;
+    transition: 0.5s;
+}
+
+.linksFooter > a{
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.linksFooter > a:hover{
+    color: #F5E0D4 ;
+    transition: 0.5s;
+}

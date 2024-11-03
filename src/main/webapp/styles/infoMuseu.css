@@ -1,182 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap");
+body {
+  font-family: "Lexend Exa";
+}
 #museu {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  padding-left: 20px;
 }
 
 #infoMuseu {
-    width: 50vw;
-    height: 83vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-    padding-top: 12vh;
-    padding-bottom: 5vh;
-    overflow: auto;
-    white-space: nowrap;
+  width: 50vw;
+  height: 83vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding-top: 12vh;
+  padding-bottom: 5vh;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 #infoMuseu::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
-#infoMuseu > p, h1, div {
-    white-space: wrap;
+#infoMuseu > p,
+h1,
+div {
+  white-space: wrap;
 }
 
 #nomeMuseu {
-    width: 40vw;
-    height: 100vh;
-    font-size: 50px;
+  width: 40vw;
+  height: 100vh;
+  font-size: 50px;
 }
 
-#descMuseu, #rua, #estadoCidade {
-    width: 45vw;
-    font-size: 20px;
+#descMuseu,
+#rua,
+#estadoCidade {
+  width: 45vw;
+  font-size: 20px;
 }
 
 #diasFunc {
-    width: 45vw;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas:
+  width: 45vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
     "titulo titulo titulo titulo"
     "dia abertura fechamento ingresso"
     "fechado fechado fechado fechado";
-    border: 1px solid black;
-    border-radius: 5px;
-    text-align: center;
+  border: 1px solid #282525;
+  border-radius: 5px;
+  text-align: center;
 }
 
 #titDiasFunc {
-    grid-area: titulo;
-    text-align: center;
-    font-size: 28px;
-    font-weight: 600;
+  grid-area: titulo;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
 }
 
 .subtit {
-    font-size: 16px;
-    font-weight: 600;
+  font-size: 16px;
+  font-weight: 600;
 }
 
-#titDiasFunc, .dia, .abertura, .fechamento, .valorIngresso, #fechado {
-    border: 1px solid black;
-    border-radius: 5px;
+#titDiasFunc,
+.dia,
+.abertura,
+.fechamento,
+.valorIngresso,
+#fechado {
+  border: 1px solid #282525;
+  border-radius: 5px;
 }
 
 .dia {
-    grid-area: dia;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+  grid-area: dia;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .abertura {
-    grid-area: abertura;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+  grid-area: abertura;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .fechamento {
-    grid-area: fechamento;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+  grid-area: fechamento;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .valorIngresso {
-    grid-area: ingresso;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+  grid-area: ingresso;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 #fechado {
-    grid-area: fechado;
+  grid-area: fechado;
 }
 
 #editar {
-    width: 45vw;
-    font-size: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 10px;
-    background-color: #eeb08c;
-    border: 2px solid #282525;
-    border-radius: 20px;
+  width: 20em;
+  height: 3em;
+  border-radius: 0.3em;
+  border: none;
+  margin: auto;
+
+  transition: transform 0.3s ease;
+  font-family: "Lexend Exa";
+  cursor: pointer;
+  transition: 0.5s;
+
+  background-color: #7c3939;
+  color: #f5e0d4;
+  font-size: 20px;
+}
+
+#editar:hover {
+  background-color: #6e3131;
+  box-shadow: 0 0 5px rgba(124, 57, 57, 0.5);
+  transform: scale(1.1);
+}
+
+#editar:active {
+  background-color: #5e2727;
 }
 
 #fotoMuseu {
-    width: 50vw;
-    height: 100vh;
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  right: 0;
 }
 
 @media (max-width: 768px) {
-    #museu {
-        flex-direction: column;
-        justify-content: space-between;
-    }
+  #museu {
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-    #infoMuseu {
-        width: 100vw;
-        height: 100vh;
-    }
+  #infoMuseu {
+    width: 100vw;
+    height: 100vh;
+  }
 
-    #nomeMuseu {
-        width: 90vw;
-        font-size: 40px;
-    }
+  #nomeMuseu {
+    width: 90vw;
+    font-size: 40px;
+    font-weight: 800;
+  }
 
-    #descMuseu, #rua, #estadoCidade {
-        width: 90vw;
-        font-size: 16px;
-    }
+  #descMuseu,
+  #rua,
+  #estadoCidade {
+    width: 90vw;
+    font-size: 16px;
+  }
 
-    #diasFunc {
-        width: fit-content;
-    }
+  #diasFunc {
+    width: fit-content;
+  }
 
-    #titDiasFunc {
-        font-size: 22px;
-    }
+  #titDiasFunc {
+    font-size: 22px;
+  }
 
-    .subtit {
-        font-size: 14px;
-    }
+  .subtit {
+    font-size: 14px;
+  }
 
-    .dia, .abertura, .fechamento, .valorIngresso {
-        width: 22.5vw;
-        font-size: 10px;
-    }
+  .dia,
+  .abertura,
+  .fechamento,
+  .valorIngresso {
+    width: 22.5vw;
+    font-size: 10px;
+  }
 
-    #fechado {
-        font-size: 14px;
-    }
+  #fechado {
+    font-size: 14px;
+  }
 
-    #fotoMuseu {
-        display: none;
-    }
+  #fotoMuseu {
+    display: none;
+  }
 
-    #editar {
-        width: 90vw;
-        font-size: 16px;
-    }
+  #editar {
+    width: 90vw;
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 428px) {
-    #diasFunc {
-        width: 100vw;
-    }
+  #diasFunc {
+    width: 100vw;
+  }
 
-    .subtit {
-        font-size: 10px;
-    }
+  .subtit {
+    font-size: 10px;
+  }
 
-    .dia, .abertura, .fechamento, .valorIngresso {
-        width: 25vw;
-        font-size: 8px;
-    }
+  .dia,
+  .abertura,
+  .fechamento,
+  .valorIngresso {
+    width: 25vw;
+    font-size: 8px;
+  }
 }

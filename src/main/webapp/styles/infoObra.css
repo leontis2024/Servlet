@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap");
+body {
+  font-family: "Lexend Exa";
+}
 #obra {
     width: 100vw;
     height: 100vh;
     display: flex;
+    padding-left: 20px;
 }
 
 #infoObra {
@@ -41,16 +46,46 @@
     gap: 5px;
 }
 
-#editar, #excluir {
-    width: 45vw;
-    font-size: 20px;
-    font-weight: 600;
+#editar,#excluir{
+    width: 20em;
+    height: 3em;
+    border-radius: 0.3em;
+    border: none;
+    margin: auto;
+  
+    transition: transform 0.3s ease;
+    font-family: "Lexend Exa";
     cursor: pointer;
-    padding: 10px;
-    background-color: #eeb08c;
-    border: 2px solid #282525;
-    border-radius: 20px;
-}
+    transition: 0.5s;
+  
+    background-color: #7c3939;
+    color: #f5e0d4;
+    font-size: 20px;
+  }
+  #excluir{
+    border:solid 2px #7c3939;
+    background-color: transparent;
+    color: #7c3939;
+  }
+  
+  #editar:hover {
+    background-color: #6e3131;
+    box-shadow: 0 0 5px rgba(124, 57, 57, 0.5);
+    transform: scale(1.1);
+  }
+  #excluir:hover{
+    box-shadow: 0 0 5px rgba(124, 57, 57, 0.5);
+
+    transform: scale(1.1);
+  }
+  #excluir:active{
+    color: #f5e0d4;
+    background-color: #5e2727;
+  }
+  
+  #editar:active {
+    background-color: #5e2727;
+  }
 
 #fotoObra {
     width: 50vw;

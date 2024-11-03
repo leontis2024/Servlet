@@ -64,11 +64,11 @@ public class LoginAdm extends HttpServlet {
 
                 }else{
                     request.setAttribute("erro","Usuario ou Senha invalidos");
-                    request.getRequestDispatcher("index.jsp").forward(request,response);
+                    request.getRequestDispatcher("login.jsp").forward(request,response);
                 }
             }else{
                 request.setAttribute("erro","Usuario ou Senha invalidos");
-                request.getRequestDispatcher("index.jsp").forward(request,response);
+                request.getRequestDispatcher("login.jsp").forward(request,response);
             }
         }catch (SQLException e) {
             e.printStackTrace();

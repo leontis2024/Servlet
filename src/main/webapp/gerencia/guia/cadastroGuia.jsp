@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="Resources/leon.png" type="image/jpg">
 </head>
 <body>
-<jsp:include page="../../navbarMuseu.jsp"></jsp:include>
+<jsp:include page="../../navbar/navbarMuseu.jsp"></jsp:include>
 
 
 <form action="cadastro-guia" method="post" enctype="multipart/form-data">

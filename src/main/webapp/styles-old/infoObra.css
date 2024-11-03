@@ -1,0 +1,88 @@
+#obra {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+#infoObra {
+    width: 50vw;
+    height: 83vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding-top: 12vh;
+    padding-bottom: 5vh;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+#infoObra::-webkit-scrollbar {
+    display: none;
+}
+
+#infoObra > p, h1, div {
+    white-space: normal;
+}
+
+#nomeObra {
+    width: 40vw;
+    font-size: 50px;
+}
+
+#descObra, #autor, #dtInicio, #dtFim, #genero, #localObra {
+    width: 45vw;
+    font-size: 20px;
+}
+
+#botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#editar, #excluir {
+    width: 45vw;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #eeb08c;
+    border: 2px solid #282525;
+    border-radius: 20px;
+}
+
+#fotoObra {
+    width: 50vw;
+    height: 100vh;
+}
+
+@media (max-width: 768px) {
+    #obra {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #infoObra {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #nomeObra {
+        width: 90vw;
+        font-size: 40px;
+    }
+
+    #descObra, #autor, #dtInicio, #dtFim, #genero, #localObra {
+        width: 90vw;
+    }
+
+    #fotoObra {
+        display: none;
+    }
+
+    #editar, #excluir {
+        width: 90vw;
+        font-size: 16px;
+    }
+}

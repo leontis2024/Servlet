@@ -1,100 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap");
+* {
+  font-family: "Lexend Exa";
+  user-select: none;
+}
 #navbarMuseu {
-    width: 100vw;
-    height: 70px;
-    background-color: #7C3939;
-    position: fixed;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) 3fr;
-    box-shadow: 0px 0px 15px 0px black;
-    z-index: 100;
-    transition: 0.5s;
+  width: 100vw;
+  height: 70px;
+  background-color: #7c3939;
+  position: fixed;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 3fr;
+  box-shadow: 0px 0px 15px 0px #282525b3;
+  z-index: 100;
+  transition: 0.5s;
 }
 
 #opcoesAtalhos {
-    position: relative;
-    top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    cursor: default;
+  position: relative;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: default;
+  transition: all 0.3ms ease-in;
 }
 
 #titOpcoesAtalhos {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 24px;
-    color: #F5E0D4;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 24px;
+  color: #f5e0d4;
 }
 
 #titOpcoesAtalhos:hover ~ #atalhos {
-    display: flex;
+  display: flex;
 }
 
 #atalhos {
-    width: 120px;
-    display: none;
-    flex-direction: column;
-    background-color: #7C3939;
-    border: 1px solid black;
-    border-radius: 10px;
+  width: 120px;
+  display: none;
+  flex-direction: column;
+  background-color: #7c3939;
+  border: 1.5px solid #5f2b2b;
+  box-shadow: 0.2em 0.2em 0.3em #4e4646b3;
+  border-radius: 10px;
+  transition: all 0.3ms ease-in;
 }
 
 #atalhos:hover {
-    display: flex;
+  display: flex;
 }
 
-
-#atalhos > form{
-    text-decoration: none;
-    font-size: 20px;
-    color: #F5E0D4;
-    padding: 5px 10px;
-    transition: 0.5s;
+#atalhos > form {
+  text-decoration: none;
+  font-size: 20px;
+  color: #f5e0d4;
+  padding: 5px 10px;
+  transition: 0.3s;
 }
 
 #atalhos > form:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
+  background-color: #522424;
+  border-radius: 3px;
+}
+#atalhos > form:active {
+  background-color: #391818;
+  color: #d5c2b6;
+  border-radius: 3px;
 }
 
 .atalho {
-    cursor: pointer;
+  cursor: pointer;
+  width: 100px;
 }
 
 #navNomeMuseu {
-    height: 70px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: 30px;
-    color: #F5E0D4;
-    padding: 0 10px;
+  height: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 30px;
+  color: #f5e0d4;
+  padding: 0 10px;
 }
 
 @media (max-width: 768px) {
-    #titOpcoesAtalhos {
-        font-size: 22px;
-    }
+  #titOpcoesAtalhos {
+    font-size: 22px;
+  }
 
-    #navNomeMuseu {
-        font-size: 22px;
-    }
+  #navNomeMuseu {
+    font-size: 22px;
+  }
 
-    .atalho {
-        font-size: 18px;
-    }
+  .atalho {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 520px) {
-    #titOpcoesAtalhos {
-        font-size: 18px;
-    }
+  #titOpcoesAtalhos {
+    font-size: 18px;
+  }
 
-    #navNomeMuseu {
-        font-size: 18px;
-    }
+  #navNomeMuseu {
+    font-size: 18px;
+  }
 
-    .atalho {
-        font-size: 16px;
-    }
+  .atalho {
+    font-size: 16px;
+  }
 }

@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap");
 body {
-    background: linear-gradient(90deg, rgba(245,224,212,1) 30%, rgba(238,176,140,1) 100%);
+    background:  rgba(245,224,212,1) 
+  
 }
-
 #titulo {
     width: fit-content;
     height: fit-content;
@@ -18,17 +19,34 @@ body {
     cursor: default;
 }
 
+
 #addArtista {
     position: relative;
     top: 100px;
     left: 30px;
-    font-size: 20px;
-    font-weight: 600;
-    background-color: #EEB08C;
-    border: 2px solid #282525;
+    width: 14em;
+    height: 2.8em;
     border-radius: 10px;
     padding: 15px;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    font-family: "Lexend Exa";
     cursor: pointer;
+    background-color: #7c3939;
+    color: #f5e0d4;
+  
+}
+
+#addArtista:hover {
+    background-color: #6e3131;
+    box-shadow: 0 0 5px rgba(124, 57, 57, 0.5);
+    transform: scale(1.1);}
+
+#addArtista:active {
+    background-color:  #5e2727;
+
 }
 
 #artistas {
@@ -49,7 +67,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: #7C3939;
-    border: 2px solid #282525;
+    border: 2.5px solid #462121;
     border-radius: 15px;
     padding: 10px;
     transition: 0.5s;
@@ -62,6 +80,7 @@ body {
 
 .artista:active {
     transform: scale(1);
+    background-color: #5f2e2e;
 }
 
 .nomeArtista {
@@ -81,7 +100,8 @@ body {
 .ftArtista {
     width: 300px;
     height: 300px;
-    border: 2px solid #282525;
+    box-shadow: 0.2em 0.2em 0.3em #282525b3;
+    object-fit: cover;
     border-radius: 10px;
 }
 

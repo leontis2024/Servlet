@@ -19,7 +19,7 @@
     <title><%=obra.getNmObra()%></title>
 </head>
 <body>
-<jsp:include page="../../navbarMuseu.jsp"></jsp:include>
+<jsp:include page="../../navbar/navbarMuseu.jsp"></jsp:include>
 
 <div class="assunto">
     <div id="obra">

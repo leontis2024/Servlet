@@ -12,18 +12,7 @@
     <link rel="shortcut icon" href="Resources/leon.png" type="image/jpg">
 </head>
 <body>
-<nav id="navbar">
-    <div id="left">
-        <a href="Index.html" id="leon"><img src="Resources/leon.png"></a>
-    </div>
-
-    <div id="links">
-        <a href="SobreApp.html">Sobre o App</a>
-        <a href="SobreEmpresa.html">Sobre a Empresa</a>
-        <a href="#nossosCont">Nossos Contatos</a>
-    </div>
-</nav>
-
+<jsp:include page="navbar/navbarLogin.html"></jsp:include>
 <div id="login">
     <div id="formulario">
         <h2 id="titulo">Login</h2>

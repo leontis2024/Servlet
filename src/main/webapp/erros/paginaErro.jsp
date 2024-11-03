@@ -24,7 +24,7 @@
         <%=erro != null?erro:"Erro interno em nosso sistema! Tente de novo mais tarde"%>
     </p>
 
-    <a href="index.jsp" id="voltar">
+    <a href="login.jsp" id="voltar">
         Voltar
     </a>
 </div>

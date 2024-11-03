@@ -1,0 +1,78 @@
+#artista {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+#infoArtista {
+    width: 50vw;
+    height: 83vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding-top: 12vh;
+    padding-bottom: 5vh;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+#infoArtista::-webkit-scrollbar {
+    display: none;
+}
+
+#infoArtista > p, h1, div {
+    white-space: wrap;
+}
+
+#nomeArtista {
+    width: 40vw;
+    font-size: 50px;
+}
+
+#descArtista, #nascimento, #morte {
+    width: 45vw;
+    font-size: 20px;
+}
+
+#editar {
+    width: 45vw;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #eeb08c;
+    border: 2px solid #282525;
+    border-radius: 20px;
+}
+
+#fotoArtista {
+    width: 50vw;
+    height: 100vh;
+}
+
+@media (max-width: 768px) {
+    #artista {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #infoArtista {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #nomeArtista {
+        width: 90vw;
+        font-size: 40px;
+    }
+
+    #descArtista, #nascimento, #morte {
+        width: 90vw;
+        font-size: 16px;
+    }
+
+    #fotoArtista {
+        display: none;
+    }
+}

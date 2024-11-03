@@ -1,103 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap");
 body {
-    background: linear-gradient(90deg, rgba(245,224,212,1) 30%, rgba(238,176,140,1) 100%);
+  background: rgba(245, 224, 212, 1);
 }
-
 #titulo {
-    width: fit-content;
-    height: fit-content;
-    position: relative;
-    top: 90px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-    font-size: 50px;
-    font-weight: 600;
-    color: #282525;
-    cursor: default;
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  top: 90px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  font-size: 50px;
+  font-weight: 600;
+  color: #282525;
+  cursor: default;
 }
 
 #addObra {
-    position: relative;
-    top: 100px;
-    left: 30px;
-    font-size: 20px;
-    font-weight: 600;
-    background-color: #EEB08C;
-    border: 2px solid #282525;
-    border-radius: 10px;
-    padding: 15px;
-    cursor: pointer;
+  position: relative;
+  top: 100px;
+  left: 30px;
+  width: 14em;
+  height: 2.8em;
+  border-radius: 10px;
+  padding: 15px;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+  font-family: "Lexend Exa";
+  cursor: pointer;
+  background-color: #7c3939;
+  color: #f5e0d4;
+}
+
+#addObra:hover {
+  background-color: #6e3131;
+  box-shadow: 0 0 5px rgba(124, 57, 57, 0.5);
+  transform: scale(1.1);
+}
+
+#addObra:active {
+  background-color: #5e2727;
 }
 
 #obras {
-    width: 100vw;
-    position: relative;
-    top: 130px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2vw;
+  width: 100vw;
+  position: relative;
+  top: 130px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2vw;
 }
 
 .obra {
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #7C3939;
-    border: 2px solid #282525;
-    border-radius: 15px;
-    padding: 10px;
-    transition: 0.5s;
-    cursor: pointer;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #7c3939;
+  border: 2px solid #462121;
+  border-radius: 15px;
+  padding: 10px;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .obra:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .obra:active {
-    transform: scale(1);
+  transform: scale(1);
+  background-color: #5f2e2e;
 }
 
 .nomeObra {
-    font-size: 30px;
-    font-weight: 600;
-    color: #F5E0D4;
+  font-size: 30px;
+  font-weight: 600;
+  color: #f5e0d4;
 }
 
 .imagem {
-    width: 300px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .ftObra {
-    max-width: 300px;
-    max-height: 300px;
-    border: 2px solid #282525;
-    border-radius: 10px;
-    object-fit: contain;
-    object-position: bottom;
+  max-width: 300px;
+  max-height: 300px;
+  box-shadow: 0.2em 0.2em 0.3em #282525b3;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 @media (max-width: 320px) {
-    .obra {
-        width: 280px;
-    }
+  .obra {
+    width: 280px;
+  }
 
-    .imagem {
-        width: 280px;
-        height: 280px;
-    }
+  .imagem {
+    width: 280px;
+    height: 280px;
+  }
 
-    .ftObra {
-        max-width: 280px;
-        max-height: 280px;
-    }
+  .ftObra {
+    max-width: 280px;
+    max-height: 280px;
+  }
 }

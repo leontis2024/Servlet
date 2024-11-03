@@ -29,7 +29,7 @@
     <link rel="shortcut icon" href="Resources/leon.png" type="image/jpg">
 </head>
 <body>
-<jsp:include page="../../navbarMuseu.jsp"></jsp:include>
+<jsp:include page="../../navbar/navbarMuseu.jsp"></jsp:include>
 
 <form action="cadastro-obra" method="post" enctype="multipart/form-data">
     <input type="text" name="id_museu_adm" value="<%=request.getAttribute("id_museu_adm")%>" style="display: none">

@@ -28,7 +28,7 @@
 </head>
 <body>
 
-<jsp:include page="../../navbarMuseu.jsp"></jsp:include>
+<jsp:include page="../../navbar/navbarMuseu.jsp"></jsp:include>
 <form action="cadastro-artista" method="post" enctype="multipart/form-data">
   <input type="text" name="id_museu_adm" value="<%=request.getAttribute("id_museu_adm")%>" style="display: none">
   <input type="text" name="id_artista" value="<%=objArtista?artista.getId():-1%>" style="display: none">

@@ -18,7 +18,7 @@ int id_museu_adm = (int) request.getAttribute("id_museu_adm");
 
 </head>
 <body>
-<jsp:include page="../../navbarMuseu.jsp"></jsp:include>
+<jsp:include page="../../navbar/navbarMuseu.jsp"></jsp:include>
 
 
 <div class="assunto">

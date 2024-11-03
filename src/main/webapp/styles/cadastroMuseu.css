@@ -1,11 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap");
 body {
-    background: linear-gradient(90deg, rgba(245,224,212,1) 30%, rgba(238,176,140,1) 100%);
+    background:  rgba(245,224,212,1) ;
+    font-family: 'Lexend Exa';
 }
 
 #formulario {
     width: 90vw;
-    position: relative;
-    top: 12vh;
+    padding-top: 70px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 2vw;
@@ -22,16 +23,27 @@ body {
 }
 
 label {
-    font-size: 20px;
+    width: fit-content;
+    font-size: 22px;
+    color: #282525;
+    font-family: "Lexend Exa";
 }
 
 input, textarea, select, option {
     font-size: 16px;
-    padding: 1px 3px;
+    padding: 2px 4px;
+    margin:2px;
+    border: solid 0.1em #282525;
+    border-radius: 3px;
 }
 
-input, select, option {
+
+input, select {
     width: 20vw;
+}
+input::placeholder{
+    color: #999;
+    font-style: italic;
 }
 
 textarea, #ruaDiv > input, #pontoRefDiv > input {
@@ -103,20 +115,38 @@ textarea, #ruaDiv > input, #pontoRefDiv > input {
 }
 
 .botao {
-    width: 200px;
-    font-size: 16px;
-    font-weight: 600;
-    background-color: #EEB08C;
-    color: #282525;
+    width: 14em;
+    height: 2.8em;
+    border-radius: 0.3em;
+    border: none;
+    margin: auto;
+  
+    transition: transform 0.3s ease;
+    font-family: "Lexend Exa";
     cursor: pointer;
-    border: 2px solid #282525;
-    border-radius: 30px;
-    padding: 8px;
+    transition: 0.5s;
+
+  
+    background-color: #7c3939;
+    color: #f5e0d4;
+  
+}
+
+.botao:hover {
+    background-color: #6e3131;
+    box-shadow: 0 0 5px rgba(124, 57, 57, 0.5);
+    transform: scale(1.1);}
+
+.botao:active {
+    background-color:  #5e2727;
+
 }
 
 #nomeDiv, #inauguracaoDiv, #telDiv, #descDiv, #ruaDiv, #estadoDiv, #cidadeDiv, #pontoRefDiv, #cnpjDiv, #cepDiv, #ftMuseuDiv {
     display: flex;
     flex-direction: column;
+    width: fit-content;
+    padding: 5px;
 }
 
 #diasFunc {

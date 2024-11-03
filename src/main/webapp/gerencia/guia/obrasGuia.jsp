@@ -27,7 +27,7 @@
     <title>Informações da Obra</title>
 </head>
 <body>
-<jsp:include page="../../navbarMuseu.jsp"></jsp:include>
+<jsp:include page="../../navbar/navbarMuseu.jsp"></jsp:include>
 
 
 <h1 id="titulo">Gerenciar Obras do Guia</h1>

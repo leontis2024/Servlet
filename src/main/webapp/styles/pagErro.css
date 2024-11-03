@@ -1,90 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap");
 body {
-    background-color: #F5E0D4;
+  background-color: #f5e0d4;
 }
 
 #erro {
-    width: 50vw;
-    position: relative;
-    top: 7rem;
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
+  width: 50vw;
+  position: relative;
+  top: 7rem;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
 #imagem {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #decorLeontis1 {
-    width: 155px;
+  width: 155px;
 }
 
 #decorLeontis2 {
-    width: 310px;
+  width: 310px;
 }
 
 #tituloErro {
-    width: fit-content;
-    font-size: 60px;
-    font-weight: 600;
-    text-align: center;
-    color: #202933;
+  width: fit-content;
+  font-size: 60px;
+  font-weight: 600;
+  text-align: center;
+  color: #202933;
 }
 
 #descErro {
-    width: 50vw;
-    text-align: center;
-    font-size: 18px;
-    color: #202933;
+  width: 50vw;
+  text-align: center;
+  font-size: 18px;
+  color: #202933;
 }
 
 #voltar {
-    width: 250px;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    text-align: center;
-    cursor: pointer;
-    background-color: #EEB08C;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 30px;
-    transition: 0.5s;
+  width: 250px;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+
+  padding: 10px;
+  margin-top: 30px;
+  transition: 0.5s;
+
+  border-radius: 0.3em;
+  border: none;
+  margin: auto;
+
+  transition: transform 0.3s ease;
+  font-family: "Lexend Exa";
+
+  background-color: #7c3939;
+  color: #f5e0d4;
 }
 
 #voltar:hover {
-    transform: scale(1.03);
+  background-color: #6e3131;
+  box-shadow: 0 0 5px rgba(124, 57, 57, 0.5);
+  transform: scale(1.1);
 }
 
 #voltar:active {
-    transform: scale(1);
+  background-color: #5e2727;
 }
 
 @media (max-width: 700px) {
-    #erro {
-        width: 80vw;
-        top: 3rem;
-    }
+  #erro {
+    width: 80vw;
+    top: 3rem;
+  }
 
-    #decorLeontis1 {
-        width: 100px;
-    }
+  #decorLeontis1 {
+    width: 100px;
+  }
 
-    #decorLeontis2 {
-        width: 255px;
-    }
+  #decorLeontis2 {
+    width: 255px;
+  }
 
-    #tituloErro {
-        font-size: 50px;
-    }
+  #tituloErro {
+    font-size: 50px;
+  }
 
-    #descErro {
-        font-size: 16px;
-    }
+  #descErro {
+    font-size: 16px;
+  }
 }

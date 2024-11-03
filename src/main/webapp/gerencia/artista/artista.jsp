@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<jsp:include page="../../navbarMuseu.jsp"></jsp:include>
+<jsp:include page="../../navbar/navbarMuseu.jsp"></jsp:include>
 
 <h1 id="titulo">Catálogo de Artistas</h1>
 <form action="adicionar-artista" method="post">

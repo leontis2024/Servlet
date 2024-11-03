@@ -21,7 +21,7 @@
     <title><%=museu.getNmMuseu()%></title>
 </head>
 <body>
-<jsp:include page="../navbarMuseu.jsp"></jsp:include>
+<jsp:include page="../navbar/navbarMuseu.jsp"></jsp:include>
 
 
 <div class="assunto">

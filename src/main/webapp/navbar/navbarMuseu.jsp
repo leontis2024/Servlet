@@ -1,6 +1,6 @@
 <%@ page import="org.example.leontisservlet.model.Museu" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page errorPage="erros/paginaErro.jsp" %>
+<%@ page errorPage="../erros/paginaErro.jsp" %>
 
 <%
     Museu museu = (Museu) request.getAttribute("museu");
@@ -14,7 +14,7 @@
 <body>
 <nav id="navbarMuseu">
     <div id="left">
-        <a href="index.jsp" id="leon"><img src="Resources/leon.png"></a>
+        <a href="login.jsp" id="leon"><img src="Resources/leon.png"></a>
     </div>
 
     <div id="opcoesAtalhos">

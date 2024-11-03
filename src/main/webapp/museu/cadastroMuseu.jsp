@@ -42,7 +42,7 @@
 <body>
 <%--Só mostra a navbar se tiver um museu, caso contratio, nao.--%>
 <%if(objMuseu){%>
-    <jsp:include page="../navbarMuseu.jsp"></jsp:include>
+    <jsp:include page="../navbar/navbarMuseu.jsp"></jsp:include>
 <%}else{%>
     <nav id="navbar">
         <a href="index.jsp" id="leon"><img src="Resources/leon.png"></a>

@@ -60,6 +60,7 @@ public class CadastroObrasGuia extends HttpServlet {
                 for (int i = 0; i < qtdObras; i++) {
                     ObraGuia obraGuiaUpdate = new ObraGuia(i+1, guia.getId(), Integer.parseInt(request.getParameter("obra_"+i)), -1, request.getParameter("descLoc_"+i));
                     if(obraGuiaDAO.alterar(obraGuiaUpdate,guia.getId(),i+1) == 0){
+                        System.out.println(obraGuiaUpdate);
                         obraGuiaDAO.inserir(obraGuiaUpdate);
                     }
                 }
