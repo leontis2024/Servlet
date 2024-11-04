@@ -3,10 +3,11 @@ body {
   font-family: "Lexend Exa";
 }
 #museu {
-  width: 100vw;
+  width: 90vw;
   height: 100vh;
   display: flex;
   padding-left: 20px;
+
 }
 
 #infoMuseu {
@@ -20,6 +21,9 @@ body {
   padding-bottom: 5vh;
   overflow: auto;
   white-space: nowrap;
+  margin: auto;
+  position: absolute;
+  left:0;
 }
 
 #infoMuseu::-webkit-scrollbar {
@@ -144,6 +148,7 @@ div {
   height: 100vh;
   position: absolute;
   right: 0;
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {

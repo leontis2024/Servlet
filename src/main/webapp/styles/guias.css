@@ -81,6 +81,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: #F5E0D4;
 }
 
 .nomeGuia {
@@ -143,23 +144,28 @@ body {
   max-width: 300px;
   max-height: 300px;
   border-radius: 10px;
+  object-fit: cover;
   border: 2px solid #282525;
 }
 
 @media (max-width: 1025px) {
   .guia {
     width: 730px;
+    height: fit-content;
   }
 
   .descGuia {
     width: 400px;
+  }
+
+  .botoes {
+    flex-direction: column;
   }
 }
 
 @media (max-width: 760px) {
   .guia {
     width: 280px;
-    height: 700px;
     flex-direction: column-reverse;
   }
 

@@ -29,7 +29,7 @@
     </div>
 
     <div class="descContato">
-      Todo acervo é único. Entre em contato conosco hoje e descubra como o Leontis pode se adequar à seu estabelecimento.    </div>
+      Todo acervo é único. Entre em contato conosco hoje e descubra como o Leontis pode se adequar a seu estabelecimento.    </div>
   </div>
 
   <div class="contato">

@@ -37,12 +37,16 @@ input {
     margin:2px;
     border: solid 0.1em #282525;
     border-radius: 3px;
+    font-weight: 500;
+    font-family: "Lexend Exa";
 }
 
 textarea, select, option {
     width: 43vw;
     font-size: 16px;
     padding: 1px 3px;
+    font-weight: 500;
+    font-family: "Lexend Exa";
 }
 
 #titCadastro {
@@ -104,13 +108,13 @@ textarea, select, option {
     border-radius: 0.3em;
     border: none;
     margin: auto;
-  
+
     transition: transform 0.3s ease;
     font-family: "Lexend Exa";
     cursor: pointer;
     transition: 0.5s;
 
-  
+
     background-color: #7c3939;
     color: #f5e0d4;
 }

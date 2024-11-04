@@ -5,8 +5,10 @@ body {
 }
 
 #formulario {
+    font-family: 'Lexend Exa';
     width: 90vw;
-    padding-top: 70px;
+    position: relative;
+    top: 12vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 2vw;
@@ -19,6 +21,7 @@ body {
     "rua rua pontoRef pontoRef"
     "finalizar finalizar finalizar finalizar";
     margin: auto;
+    margin-left: 20px;
     padding: 20px;
 }
 
@@ -35,6 +38,8 @@ input, textarea, select, option {
     margin:2px;
     border: solid 0.1em #282525;
     border-radius: 3px;
+    font-weight: 500;
+    font-family: "Lexend Exa";
 }
 
 
@@ -120,16 +125,16 @@ textarea, #ruaDiv > input, #pontoRefDiv > input {
     border-radius: 0.3em;
     border: none;
     margin: auto;
-  
+
     transition: transform 0.3s ease;
     font-family: "Lexend Exa";
     cursor: pointer;
     transition: 0.5s;
 
-  
+
     background-color: #7c3939;
     color: #f5e0d4;
-  
+
 }
 
 .botao:hover {

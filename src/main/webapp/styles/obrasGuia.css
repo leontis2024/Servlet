@@ -80,8 +80,8 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  position: relative;
-  top: 150px;
+  position: absolute;
+  top: 450px;
 }
 #botoes > input:last-child {
   background-color: transparent;
@@ -95,8 +95,8 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  position: relative;
-  top: 160px;
+  position: absolute;
+  top: 530px;
   margin-bottom: 20px;
 }
 

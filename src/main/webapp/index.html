@@ -1,13 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="shortcut icon" href="Resources/leon.png" type="image/jpg">
+    <title>Leontis</title>
 </head>
 <body>
-    <p>Landing page wooooooooooooooooooooooooooooooooow</p>
-    <a href="cadastroAdm.jsp">Cadastre-se</a>
-    <br>
-    <a href="sobreApp.html">Sobre o app</a>
+<nav id="navbar">
+    <div id="left">
+        <a href="#inicio" id="leon"><img src="Resources/leon.png"></a>
+    </div>
+
+    <div id="links">
+        <a href="#sobreApp">Sobre o App</a>
+        <a href="#sobreEmp">Sobre a Empresa</a>
+        <a href="#nossosCont">Nossos Contatos</a>
+    </div>
+</nav>
+
+<!-- Início -->
+<section id="inicio" class="assunto">
+    <div id="txtBox">
+        <h1 id="tituloIni">Leontis: A Arte na Palma da sua Mão</h1>
+        <h2 id="descIni">Você, museu que quer aumentar as suas visitas e divulgar o seu acervo, cadastre-se já no Leontis!</h2>
+        <a href="cadastroAdm.jsp" id="botao">Cadastre-se</a>
+        <h2 id="login">Já tem uma conta? <a href="login.jsp">Faça login!</a></h2>
+    </div>
+
+    <div id="ilustracao">
+        <div class="img"><img src="Resources/Abaporu.jpg"></div>
+        <div class="img"><img src="Resources/sonhoTropical.jpg"></div>
+        <div class="img"><img src="Resources/PersMem.jpg"></div>
+    </div>
+</section>
+<!-- Início -->
+
+
+<!-- Nossas Funcionalidades -->
+<section  class="assunto" id="nossasFunc">
+    <h1 id="tituloFunc">Nossas Funcionalidades</h1>
+    <div id="imagens">
+        <img src="Resources/imagem_scanner.png" alt="scan" id="scan">
+        <img src="Resources/imagem_home.png" alt="home" id="home">
+        <img src="Resources/imagem_guia.png" alt="tour" id="tour">
+    </div>
+
+    <!-- TEXTOS -->
+
+    <div id="textosFunc">
+        <div id="textoHome">
+            <h1 class="titulo">Home</h1>
+            <p class="texto">A home é a página principal do nosso aplicativo, contando com um universo de obras nacionais, disponíveis tanto na aba explorar quanto na aba seguindo. Ao selecionar uma obra, os usuários serão redirecionados para uma página com diversas informações sobre a pintura e sobre o local onde ela está sendo exposta.</p>
+        </div>
+        <div id="textoScanner">
+            <h1 class="titulo">Scanner</h1>
+            <p class="texto">Nosso Scanner visa revolucionar a forma como os usuários descobrem e aprendem sobre obras de arte. Ao apontar a câmera do celular para uma pintura, o visitante será automaticamente redirecionado para uma página com informações únicas sobre a obra, que serão apresentadas de maneira rápida e objetiva.</p>
+        </div>
+
+        <div id="textoTour">
+            <h1 class="titulo">Tour virtual</h1>
+            <p class="texto">Visto que muitos museus não possuem um guia, nosso aplicativo irá disponibilizar um tour virtual para enriquecer a experiência do usuário ao visitar um museu. Com esta funcionalidade, o visitante poderá ver todas as salas que o museu possui e as obras que se encontram nela. </p>
+        </div>
+    </div>
+</section>
+
+</div>
+<hr>
+<!-- Sobre o App -->
+<section class="assunto" id="sobreApp">
+    <div id="txtBoxApp">
+        <h1 id="tituloApp">Conheça Leontis</h1>
+        <h3 id="subtitApp">Nosso aplicativo visa a disseminação da arte Brasileira</h3>
+        <a href="sobreApp.html" id="botaoApp">Venha mergulhar no mundo da arte!</a>
+    </div>
+    <!-- <img src="Resources/fotoRomero.jpeg" id="imgRomero"> -->
+</section>
+
+
+<!-- Sobre a Empresa -->
+<section id="sobreEmp" class="assunto">
+    <div id="txtBoxEmp">
+        <h1 id="tituloEmp">Visus</h1>
+        <div id="info">
+            <h3>A empresa Visus traz soluções inovadoras e criativas para diversos problemas, tendo como seu primeiro aplicativo Leontis. O nome deriva da junção entre as palavras "Visão" e "Sustentável", tendo como objetivo trazer invenções para um desenvolvimento tecnológico limpo e sustentável.  A equipe de fundadores é formada por 11 alunos de ensino médio, que pela ODS 11 (Objetivos de Desenvolvimento Sustentável da ONU) se juntaram e tomaram a decisão de criar uma cooperativa capaz de cumprir com esses objetvos.</h3>
+            <h2>"Visando o mundo de forma sustentável"</h2>
+        </div>
+    </div>
+</section>
+
+<!-- Integrantes -->
+<section id="integrantes">
+    <img id="visusIntegrantes" src="Resources/integrantes.png" alt="">
+    <div id="listaIntegrantes">
+        <img id="logointegrantes" src="Resources/logo.jpg" alt="">
+        <h1>Integrantes do Leontis</h1>
+        <ul>
+            <li>Ana Beatriz Romera</li>
+            <li>Bruno Guedes Galvão</li>
+            <li>Gabriel Koji Kondo</li>
+            <li>Leticia Reina Pitta </li>
+            <li>Lívia Izidório</li>
+            <li>Lucas Oliveira das Graças</li>
+            <li>Marcos Guilherme Araujo</li>
+            <li>Maria Eduarda da Silva Araujo</li>
+            <li>Matheus Vieira Cury</li>
+            <li>Neife Lourivado de Oliveira Junior</li>
+            <li>Samira De Souza Campos</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Nossos Contatos -->
+<div id="nossosCont" >
+    <div id="leontisFooter">
+        <img src="Resources/leon.png" id="imgFooter" >
+        <h2>Leontis</h2>
+    </div>
+    <div id="linkIntegrantes">
+        <h1>Nossos Contatos!</h1>
+        <ul>
+            <li>
+                <a href="https://linktr.ee/Leontis" target="_blank">
+                    <div id="imagemFooter"></div>
+                </a>
+            </li>
+            <br>
+            <li>
+                <a href="mailto:leontis2024@gmail.com" target="_blank">
+                    <div id="mailFooter"></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="linksFooter">
+        <h2>Site Leontis</h2>
+        <a href="#sobreApp">- Sobre o App</a>
+        <a href="#sobreEmp">- Sobre a Empresa</a>
+    </div>
+</div>
 </body>
 </html>

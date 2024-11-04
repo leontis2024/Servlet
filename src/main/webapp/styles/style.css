@@ -1,18 +1,16 @@
-@font-face {
-    font-family: quicksand;
-    src: url(../Resources/Quicksand/Quicksand-VariableFont_wght.ttf);
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap");
 html {
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 body {
     background-color: #F5E0D4;
+    height: 100%;
 }
 
 * {
-    font-family: quicksand;
+    font-family: 'Lexend Exa';
     font-weight: 500;
     margin: 0%;
     padding: 0%;
@@ -179,12 +177,23 @@ body {
 }
 
 @media (max-width:768px) {
+
+    #links > a {
+        font-size: 17px;
+    }
+
     #nossosCont{
         height: 35vh;
     }
 }
 
 @media (max-width:428px) {
+
+    #links > a {
+        font-size: 11px;
+        margin-left: 20px;
+    }
+
     #nossosCont{
         height: 70vh;
         flex-direction: column;
