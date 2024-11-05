@@ -1,5 +1,5 @@
 # Fase 1: Build do projeto com JDK 21
-FROM maven:3.8.3-eclipse-temurin-21 AS build
+FROM maven:3.9-eclipse-temurin-21 AS build
 
 WORKDIR /app
 
