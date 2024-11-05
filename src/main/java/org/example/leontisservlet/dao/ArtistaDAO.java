@@ -116,37 +116,6 @@ public class ArtistaDAO {
     }
     //</editor-fold>
 
-    //<editor-fold desc="Método remover">
-    public int remover(int id){
-        //Instanciando o objeto "conexao".
-        Conexao conexao = new Conexao();
-        try{
-            //Abrindo uma conexão com o banco de dados.
-            Connection conn = conexao.conectar();
-
-            //Preparando o delete.
-            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM artista WHERE id = ?");
-
-            //Definindo o parâmetro com base no objeto recebido.
-            pstmt.setInt(1,id);
-
-            //Retorno: se for 1 deu tudo certo,
-            //se for 0 não executou, e se for -1, erro na conexão com o banco.
-            if(pstmt.executeUpdate() > 0){
-                return 1;
-            }else {
-                return 0;
-            }
-        }catch (SQLException sqle){
-            sqle.printStackTrace();
-            return -1;
-        }finally {
-            //Dando erro ou não, desconectamos.
-            conexao.desconectar();
-        }
-    }
-    //</editor-fold>
-
     //<editor-fold desc="Métodos buscar">
     public ResultSet buscarPorId(int id){
         //Instanciando o objeto "conexao".

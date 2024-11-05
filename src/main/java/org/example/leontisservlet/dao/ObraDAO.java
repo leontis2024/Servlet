@@ -149,38 +149,6 @@ public class ObraDAO {
         }
     }
 
-    //Método buscar pelo id do gênero.
-    public ResultSet buscarPorIdGenero(int idGenero){
-        Conexao conexao = new Conexao();
-        try{
-            Connection conn = conexao.conectar();
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM obra WHERE id_genero = ?");
-            pstmt.setInt(1,idGenero);
-            return pstmt.executeQuery();
-        }catch (SQLException sqle){
-            sqle.printStackTrace();
-            return null;
-        }finally {
-            conexao.desconectar();
-        }
-    }
-
-    //Método buscar pelo artista.
-    public ResultSet buscarPorArtista(int idArtista){
-        Conexao conexao = new Conexao();
-        try{
-            Connection conn = conexao.conectar();
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM obra WHERE id_artista = ?");
-            pstmt.setInt(1,idArtista);
-            return pstmt.executeQuery();
-        }catch (SQLException sqle){
-            sqle.printStackTrace();
-            return null;
-        }finally {
-            conexao.desconectar();
-        }
-    }
-
     //Método buscar pelo id do museu.
     public ResultSet buscarPorIdMuseu(int idMuseu){
         Conexao conexao = new Conexao();

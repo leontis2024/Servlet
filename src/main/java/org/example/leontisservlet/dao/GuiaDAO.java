@@ -143,7 +143,7 @@ public class GuiaDAO {
         }
     }
 
-    //Método buscar pelo titulo do museu
+    //Método buscar pelo titulo e pelo museu
     public ResultSet buscarPorTituloMuseu(int id_museu, String titulo) {
         Conexao conexao = new Conexao();
         try {

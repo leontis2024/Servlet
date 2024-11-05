@@ -37,25 +37,6 @@ public class ArtistaGeneroDAO {
     //</editor-fold>
 
     //<editor-fold desc="Métodos Remover">
-    //Método remover pelo id
-    public int remover(int id){
-        Conexao conexao = new Conexao();
-        try{
-            Connection conn = conexao.conectar();
-            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM artista_genero WHERE id = ?");
-            pstmt.setInt(1,id);
-            if(pstmt.executeUpdate() > 0){
-                return 1;
-            }else {
-                return 0;
-            }
-        }catch (SQLException sqle){
-            sqle.printStackTrace();
-            return -1;
-        }finally {
-            conexao.desconectar();
-        }
-    }
     //Método para remover todos com base no artista
     public void removerTodosArtista(int idArtista){
         Conexao conexao = new Conexao();

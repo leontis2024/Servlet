@@ -115,28 +115,6 @@ public class MuseuDAO {
     }
     //</editor-fold>
 
-    //<editor-fold desc="Método remover">
-    public int remover(int id){
-        Conexao conexao = new Conexao();
-
-        try{
-            Connection conn = conexao.conectar();
-            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM museu WHERE id = ?");
-            pstmt.setInt(1,id);
-            if(pstmt.executeUpdate() > 0){
-                return 1;
-            }else {
-                return 0;
-            }
-        }catch (SQLException sqle){
-            sqle.printStackTrace();
-            return -1;
-        }finally {
-            conexao.desconectar();
-        }
-    }
-    //</editor-fold>
-
     //<editor-fold desc="Métodos buscar">
     //Método buscar por id.
     public ResultSet buscarPorId(int id){
