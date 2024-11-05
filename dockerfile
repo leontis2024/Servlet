@@ -12,13 +12,12 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:21-jre
 
 # Definindo a versão do Tomcat
-ENV TOMCAT_VERSION=10.1.19
 
 # Instalando o Tomcat
-RUN curl -O https://dlcdn.apache.org/tomcat/tomcat-10/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz && \
-    tar xzf apache-tomcat-${TOMCAT_VERSION}.tar.gz && \
-    rm apache-tomcat-${TOMCAT_VERSION}.tar.gz && \
-    mv apache-tomcat-${TOMCAT_VERSION} /usr/local/tomcat
+RUN curl -O https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.31/bin/apache-tomcat-10.1.31.tar.gz && \
+    tar xzf apache-tomcat-10.1.31.tar.gz && \
+    rm apache-tomcat-10.1.31.tar.gz && \
+    mv apache-tomcat-10.1.31 /usr/local/tomcat
 
 # Copiando o WAR para o Tomcat
 COPY --from=build /app/target/Leontis-Servlet-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/app.war
