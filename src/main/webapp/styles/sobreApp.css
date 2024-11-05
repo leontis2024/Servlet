@@ -1,427 +1,385 @@
-/* Titulo do App */
-
-#comeco{
+/* Início */
+#comeco {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-#tituloApp{
+#tituloComeco {
     font-size: 50px;
-    width: 32.5vw;
+    width: 32vw;
 }
 
-#mockupLeontis{
-    height:50vh ;
+#mockupLeontis {
+    height: 60vh;
     width: auto;
     border-radius: 50px;
 }
 
-/* O aplicativo */
-.aplicativo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
-    background-color: black;
-    color: whitesmoke;
+/* Modelo de transição */
+.transicao {
     height: 100vh;
     width: 100vw;
-}
-
-.aplicativo h1{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
     text-align: center;
-    font-weight: 600;
+    color: whitesmoke;
+    background-color: #282525;
 }
 
-.imgFundo{
-    z-index: 0;
-    opacity: 0.5;
-    position: absolute;
-    height: 100vh;
+.imgFundo {
     width: 100vw;
+    height: 100vh;
+    position: absolute;
+    opacity: 0.5;
+    z-index: 0;
 }
 
-#explicacaoLeontis{
+/* Modelo de caixa de texto */
+.txtBox {
+    width: 40vw;
     display: flex;
-    justify-content: baseline;
-    align-items: center;
-}
-
-.explicacao{
-    text-align: justify;
-    display: flex;
-    width: 41vw;
     flex-direction: column;
-    font-size:17px;
-    margin: 0px 100px 100px 150px;
+    font-size: 18px;
 }
 
-.explicacao h2{
-    font-weight: 600;
-    font-size: 50px;
+.titBox {
     display: flex;
     justify-content: center;
-    margin-bottom: 1vh;
+    font-weight: 600;
+    font-size: 50px;
+    margin-bottom: 20px;
 }
 
-.explicacao h3{
-    width: fit-content;
+.descBox {
+    font-size: 18px;
+    text-align: justify;
 }
 
-#ilustracao{
-    bottom: 30vh;
-    width: fit-content;
+/* Modelo de cards */
+.containerCards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+    padding: 0 100px;
+}
+
+.card {
+    width: 300px;
+    height: 185px;
+    text-align: center;
+    font-size: 14px;
+    border: 2px solid #F5DED4;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.darkCard {
+    width: 300px;
+    height: 185px;
+    border: #282525 2px solid;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 14px;
+    display: inline-block;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.card:hover, .darkCard:hover {
+    transform: scale(1.02);
+}
+
+.card:active, .darkCard:active {
+    transform: scale(1);
+}
+
+.cardIcon {
+    height: 70px;
+    width: 70px;
+    margin: 25px 0;
+}
+
+/* O aplicativo */
+#explicacaoLeontis {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#ilustracao {
     display: flex;
     align-items: center;
-    flex-direction: row;
 }
 
-#ilustracao img{
-    transition: 0.3s;
-}
-
-#ilustracao img:hover{
-    transform: scale(1.02);
+#ilustracao > img {
+    transition: 0.5s;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-#ilustracao img:nth-child(1){
+#ilustracao > img:hover {
+    transform: scale(1.02);
+}
+
+#ilustracao > img:nth-child(1) {
     position: relative;
     top: 2rem;
     left: 2rem;
     z-index: 1;
 }
 
-#ilustracao img:nth-child(2){
+#ilustracao > img:nth-child(2) {
     position: relative;
     bottom: 2rem;
 }
 
-#ilustracao img:nth-child(3){
+#ilustracao > img:nth-child(3) {
     position: relative;
     top: 1.5rem;
     right: 2rem;
 }
 
 /* Diferenciais */
-#diferenciais{
-    background-color: #282525;
+#diferenciais {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     color: #F5DED4;
-    height: fit-content;
-    padding: 7vh 0px;
-    width: 100vw;
+    background-color: #282525;
 }
 
-#diferenciais h1{
-    font-size: 50px;
+#titDiferenciais {
     display: flex;
     justify-content: center;
-    position: relative;
-    margin-top: 3vh;
+    font-size: 50px;
 }
 
-#diferenciais h2{
+.subtitDiferenciais {
     font-size: 30px;
-    margin-left: 8vw;
 }
 
-.cardsDisplay{
-    margin: 2.6vw;
-    gap: 5.6vw;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(1,1fr);
-}
-
-.containerCards{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.cards{
-    display: inline-block;
-    border: #F5DED4 2px solid;
-    border-radius: 30px;
-    text-align: center;
-    align-items: center;
-    width: 300px;
-    height: 185px;
-    transition: 0.5s;
-}
-
-.cards:hover{
-    transform: scale(1.02);
-}
-
-.cards:active{
-    transform: scale(1);
-}
-
-.cards img{
-    height: 70px;
-    width: 70px;
-    margin-bottom: 25px;
-    margin-top: 25px;
-}
 /* Historia */
-
-#historia{
+#historia {
     background-color: #282525;
     color:#F5DED4;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     align-items: center;
-    flex-direction: row;
 }
 
-#historia img{
-    margin-top: 6vh;
-    margin-left: 4.5vw;
+#ilustracaoHist {
     height: 57.5vh;
-    width: auto;
     border-radius: 20px;
     border: #F5DED4 1px solid;
 }
 
-#historia h1{
+/* ODS */
+#sustentCult, #cultxTec {
+    height: 95vh;
     display: flex;
-    justify-content: center;
-    font-size: 45px;
-    margin-bottom: 2.1vh;
-}
-
-#historia .explicacao{
-    margin-top: 130px;
-    width: 50vw;
-    margin-right: 150px;
-}
-
-#culxTec, #susCult{
-    display: flex;
-    flex-direction: row;
-}
-
-.titulo {
-    width: fit-content;
-    font-size: 50px;
-    font-weight: 600;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .info {
-    border-left: solid 5px #7C3939;
     width: 36vw;
     height: fit-content;
-    text-align: justify;
-    position: relative;
-    top: 15vh;
-    left: 10vw;
-    padding: 20px;
-    font-size: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-}
-
-.info > h2 {
-    margin-top: 5vh;
-    font-weight: 600;
-}
-
-#txtBox{
-    width: 34vw;
+    border-left: solid 5px #7C3939;
     padding: 20px;
-    left: 10%;
-    font-size: 20px;
+}
+
+#titSustentCult, #titCultxTec {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.subtitSustentCult {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+#descSustentCult, #descCultxTec {
+    font-size: 18px;
 }
 
 #imagemOds{
-    position: relative;
-    top: 30vh;
-    left: 25vw;
     width: 400px;
     height: 400px;
-    box-shadow: black 5px 5px 15px 0px;
-}
-
-#culxTec .info{
-    position: relative;
-    left: 55vw;
-    top: 20vh;
+    box-shadow: 5px 5px 15px 0px #282525;
 }
 
 #fotoObra{
-    position: relative;
-    height: 61vh;
-    right: 35vw;
-    top: 50px;
-    bottom: 250px;
+    height: 400px;
     border-radius: 30px;
 }
 
 /* Planos Futuros */
-#planosFuturos{
-    height: fit-content;
-    padding: 7vh 0px;
+#planosFuturos {
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-#planosFuturos h1{
-    display: flex;
-    justify-content: center;
-    margin-top: 10.5vh;
+#titPlanosFuturos {
+    text-align: center;
     font-size: 50px;
 }
 
-#planosFuturos .containerCards .cardsDisplay .cards{
-    border-color: black;
-    height: 200px;
+#planosFuturos .containerCards .cardsDisplay .cards {
     width:  300px;
+    height: 200px;
+    border-color: #282525;
 }
 
-@media (max-width:1535px){
+@media (max-width:1535px) {
 
-    #comeco{
-        height: fit-content;
+    /* Início */
+    #comeco {
+        height: 100vh;
         flex-direction: column;
     }
 
-    #tituloApp{
-        height: fit-content;
+    #tituloComeco {
+        margin-top: 30px;
         width: 80vw;
-        margin-top: 150px;
+        font-size: 40px;
     }
 
-    #aplicativo h1{
-        font-size: 48px
+    #mockupLeontis {
+        width: auto;
+        height: 50vh;
     }
 
-    .assunto, #planosFuturos{
-        height: fit-content;
+    /* Modelo de caixa de texto */
+    .txtBox {
+        width: 80vw;
     }
 
-    #diferenciais h1{
-        margin-bottom: 70px;
-        display: flex;
-        text-align: center;
-    }
-
-    #mockupLeontis{
-        position: static;
-        width: 40vw;
-        height: auto;
-        display: flex;
-        align-self: center;
-        margin: 10vh 0;
-    }
-
-    #explicacaoLeontis{
+    /* Sobre o aplicativo */
+    #explicacaoLeontis {
         flex-direction: column;
-        margin-top: 60px;
+        gap: 50px;
+        padding: 50px 0;
     }
 
-    .explicacao{
-        width: 85vw;
-        height: fit-content;
-        margin: 0;
-    }
-
-    #ilustracao{
-        position: static;
-        width: fit-content;
-        margin: 110px 0px;
-    }
-
-    #ilustracao img{
+    #ilustracao > img {
         height: 270px;
     }
 
-    .cardsDisplay{
-        grid-template-columns: repeat(2, 1fr);
-        gap: 4vw;
-        margin: 5vh 0vw 5vh 0vw;
+    /* Diferenciais */
+    #diferenciais {
+        gap: 25px;
+        padding: 50px 0;
     }
 
-    #historia, #culxTec, #susCult{
-        flex-direction: column;
+    /* História */
+    #historia {
         display: flex;
+        flex-direction: column;
         align-items: center;
+        gap: 50px;
+        padding: 50px 0;
     }
 
-    #historia img{
-        height: auto;
+    #historia > img {
         width: 60vw;
+        height: auto;
     }
 
-    #historia .explicacao{
-        width: 90vw;
-        margin: 5vh 15vw 10vh 15vw;
+    #titSuntentCult, #titCultxTec {
+        font-size: 40px;
     }
 
-    .info, #txtBox{
+    #imagemOds {
+        width: 250px;
+        height: 250px;
+    }
+
+    #fotoObra {
+        width: 400px;
+        height: auto;
+    }
+
+    #planosFuturos {
+        padding: 50px 0;
+    }
+
+    #titPlanosFuturos {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width:768px) {
+
+    #tituloComeco {
+        font-size: 28px;
+    }
+
+    .containerCards {
+        padding: 0 25px;
+    }
+
+    .transicao {
+        font-size: 32px;
+    }
+
+    .titBox {
+        font-size: 32px;
+    }
+
+    .descBox {
+        text-align: start;
+    }
+
+    #titDiferenciais {
+        font-size: 32px;
+    }
+
+    #sustentCult, #cultxTec {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 12vh 0;
+    }
+
+    #cultxTec {
+        flex-direction: column-reverse;
+    }
+
+    #titSustentCult, #titCultxTec {
+        font-size: 24px;
+    }
+
+    .subtitSustentCult {
+        font-size: 20px;
+    }
+
+    #descSustentCult, #descCutlxTec {
+        font-size: 16px;
+    }
+
+    #fotoObra {
+        width: 320px;
+        height: auto;
+    }
+
+    .info {
         width: 70vw;
         height: fit-content;
         position: static;
         margin: 50px;
-    }
-
-    .titulo{
-        font-size: 40px;
-    }
-
-    #imagemOds{
-        position: static;
-        width: 30vw;
-        height: auto;
-        margin: 0;
-    }
-
-    #culxTec .info{
-        position: static;
-    }
-
-    #fotoObra{
-        position: static;
-        width: 50vw;
-        height: auto;
-        margin-bottom: 100px;
-    }
-}
-
-@media (max-width:768px){
-
-    #mockupLeontis{
-        height: 40vh;
-        width: auto;
-    }
-
-    .info, #txtBox{
-        font-size: 15px;
-    }
-
-    #imagemOds, #fotoObra{
-        height: 20vh;
-        width: auto;
-    }
-
-    #diferenciais h2 {
-        display: flex;
-        justify-self:center;
-        margin: 0;
-    }
-
-    .titulo{
-        font-size: 25px;
-    }
-
-    .containerCards{
-        justify-content: center ;
-    }
-
-    .cardsDisplay{
-        grid-template-columns: 1fr;
     }
 }
