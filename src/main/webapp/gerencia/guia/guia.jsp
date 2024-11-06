@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/guias.css">
+    <link rel="shortcut icon" href="Resources/leon.png" type="image/jpg">
     <title>Catálogo de Guias</title>
 </head>
 <body>

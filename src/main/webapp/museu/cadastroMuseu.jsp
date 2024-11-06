@@ -64,27 +64,27 @@
                 <%=(objMuseu && museu.getId() > 0) ? ("Atualizando "+museu.getNmMuseu()) : "Cadastro de Museu"%>
         </h1>
         <div id="nomeDiv">
-            <label for="nome">Nome do Museu:</label>
+            <label for="nome">Nome do Museu</label>
             <input type="text" name="nome" id="nome" placeholder="Digite qual o nome do museu" size="45" value="<%=objMuseu?museu.getNmMuseu():""%>" required>
         </div>
 
         <div id="inauguracaoDiv">
-            <label for="dtInauguracao">Inauguração:</label>
+            <label for="dtInauguracao">Inauguração</label>
             <input type="date" name="dtInauguracao" id="dtInauguracao" required value="<%=objMuseu?museu.getDtInauguracao():""%>">
         </div>
 
         <div id="telDiv">
-            <label for="tel">Telefone:</label>
+            <label for="tel">Telefone</label>
             <input type="text" name="tel" id="tel" value="<%=objMuseu?museu.getNrTelMuseu():""%>">
         </div>
 
         <div id="ftMuseuDiv">
-            <label for="image">Foto do museu:</label>
+            <label for="image">Foto do museu</label>
             <input type="file" name="image" id="image">
         </div>
 
         <div id="descDiv">
-            <label for="desc">Descrição:</label>
+            <label for="desc">Descrição</label>
             <textarea name="desc" id="desc" cols="60" rows="5"><%=objMuseu?museu.getDescMuseu():""%></textarea>
         </div>
 
@@ -105,7 +105,7 @@
                 };
                 String estadoSelecionado = objMuseu? museu.getEstado() : "";
             %>
-            <label for="estado">Estado:</label>
+            <label for="estado">Estado</label>
             <select name="estado" id="estado" required size="4">
                 <%
                     for (int i = 0; i<estados.length; i++) {
@@ -118,12 +118,12 @@
         </div>
 
         <div id="cidadeDiv">
-            <label for="cidade">Cidade:</label>
+            <label for="cidade">Cidade</label>
             <input type="text" name="cidade" id="cidade" required value="<%=objMuseu?museu.getCidade():""%>">
         </div>
 
         <div id="diasFunc">
-            <h2 id="titDiasFunc">Dias de Funcionamento:</h2>
+            <h2 id="titDiasFunc">Dias de Funcionamento</h2>
 
             <div class="diaSemana">
                 <p>Domingo</p>
@@ -175,22 +175,22 @@
             </div>
         </div>
         <div id="ruaDiv">
-            <label for="rua">Rua:</label>
+            <label for="rua">Rua</label>
             <input type="text" name="rua" id="rua" required value="<%=objMuseu?museu.getRua():""%>">
         </div>
 
         <div id="cnpjDiv">
-            <label for="cnpj">Cnpj:</label>
+            <label for="cnpj">CNPJ</label>
             <input type="text" name="cnpj" id="cnpj" required value="<%=objMuseu?museu.getCnpj():""%>">
         </div>
 
         <div id="cepDiv">
-            <label for="cep">Cep:</label>
+            <label for="cep">CEP</label>
             <input type="text" name="cep" id="cep" required value="<%=objMuseu?museu.getCep():""%>">
         </div>
 
         <div id="pontoRefDiv">
-            <label for="pontoRef">Ponto de referência:</label>
+            <label for="pontoRef">Ponto de referência</label>
             <input type="text" name="pontoRef" id="pontoRef" value="<%=objMuseu?museu.getPontoReferencia():""%>">
         </div>
 

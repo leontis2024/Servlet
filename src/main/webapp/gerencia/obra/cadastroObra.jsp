@@ -1,3 +1,4 @@
+.
 <%@ page import="java.util.LinkedList" %>
 <%@ page import="org.example.leontisservlet.model.Artista" %>
 <%@ page import="org.example.leontisservlet.model.Genero" %>
