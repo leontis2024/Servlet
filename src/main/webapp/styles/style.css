@@ -1,7 +1,5 @@
-@font-face {
-    font-family: quicksand;
-    src: url(../Resources/Quicksand/Quicksand-VariableFont_wght.ttf);
-}
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap");
+
 
 html {
     scroll-behavior: smooth;
@@ -12,7 +10,7 @@ body {
 }
 
 * {
-    font-family: quicksand;
+    font-family: 'Lexend Exa';
     font-weight: 500;
     margin: 0%;
     padding: 0%;
@@ -35,12 +33,13 @@ body {
     position: fixed;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    box-shadow: 0px 0px 15px 0px black;
+    box-shadow: 0px 0px 15px 0px #282424cf;
     z-index: 100;
     transition: 0.5s;
 }
 
 #leon {
+
     width: 70px;
     height: 70px;
     position: absolute;
@@ -48,8 +47,12 @@ body {
 }
 
 #leon > img {
+    transition: transform 0.3s ease;
     width: 70px;
     height: 70px;
+}
+#leon>img:hover{
+    transform: scale(1.2);
 }
 
 #links {
@@ -67,7 +70,7 @@ body {
     align-items: center;
     height: 70px;
     padding: 0% 2%;
-    font-size: 25px;
+    font-size: 23px;
     text-align: center;
     text-decoration: none;
     color: #F5E0D4;
@@ -95,7 +98,7 @@ body {
 }
 
 #imgFooter {
-    height: 102.2px;
+    margin-left:10px;
     width: 107.52px;
 }
 
@@ -125,8 +128,8 @@ body {
 #imagemFooter {
     background-image: url('../Resources/Instagram.png');
     background-size: cover;
-    height: 48px;
-    width: 48px;
+    height: 35px;
+    width: 35px;
     transition: 0.5s ;
 }
 
@@ -138,8 +141,8 @@ body {
 #mailFooter {
     background-image: url('../Resources/Mail.png');
     background-size: cover;
-    height: 48px;
-    width: 48px;
+    height: 36px;
+    width: 36px;
     transition: 0.5s ;
 }
 
@@ -169,7 +172,7 @@ body {
 }
 
 #linksFooter > a:hover {
-    color: #F5E0D4 ;
+    color: #b08d79 ;
     transition: 0.5s;
 }
 
