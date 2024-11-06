@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap");
 body {
-    background:  rgba(245,224,212,1) ;
+    background: rgba(245,224,212,1);
     font-family: 'Lexend Exa';
 }
 
@@ -33,7 +33,7 @@ label {
 input, textarea, select, option {
     font-size: 16px;
     padding: 2px 4px;
-    margin:2px;
+    margin: 2px;
     border: solid 0.1em #282525;
     border-radius: 3px;
     font-weight: 500;
@@ -120,13 +120,12 @@ textarea, select, option {
 .botao:hover {
     background-color: #6e3131;
     box-shadow: 0 0 5px rgba(124, 57, 57, 0.5);
-    transform: scale(1.1);}
+    transform: scale(1.1);
+}
 
 .botao:active {
     background-color:  #5e2727;
-
 }
-
 
 #nome, #inicioProd, #fimProd, #desc, #autor, #genero, #ftObra {
     display: flex;

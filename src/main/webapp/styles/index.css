@@ -257,7 +257,6 @@
 }
 
 #txtBoxApp {
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -265,8 +264,8 @@
     text-align: center;
     gap: 20px;
     color: white;
+    padding: 10px 0;
     background-color: #2b2a2a70;
-    grid-area: descSobreApp;
 }
 
 #tituloApp {

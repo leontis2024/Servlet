@@ -80,8 +80,8 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  position: absolute;
-  top: 450px;
+  position: relative;
+  top: 180px;
 }
 #botoes > input:last-child {
   background-color: transparent;
@@ -95,15 +95,12 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  position: absolute;
-  top: 530px;
+  position: relative;
+  top: 200px;
   margin-bottom: 20px;
 }
 
 .botao {
-  position: relative;
-  top: 100px;
-  left: 30px;
   width: 14em;
   height: 2.8em;
   border-radius: 10px;
@@ -121,9 +118,6 @@ body {
 .botao:hover {
   background-color: #6e3131;
   box-shadow: 0 0 5px rgba(124, 57, 57, 0.5);
-  transform: scale(1.1);
-}
-.botao > input:hover {
   transform: scale(1.1);
 }
 
