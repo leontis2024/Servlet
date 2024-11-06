@@ -6,7 +6,7 @@
 }
 
 #tituloComeco {
-    font-size: 50px;
+    font-size: 44px;
     width: 32vw;
 }
 
@@ -23,7 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 44px;
     text-align: center;
     color: whitesmoke;
     background-color: #282525;
@@ -39,22 +39,21 @@
 
 /* Modelo de caixa de texto */
 .txtBox {
-    width: 40vw;
+    width: 35vw;
     display: flex;
     flex-direction: column;
-    font-size: 18px;
 }
 
 .titBox {
     display: flex;
     justify-content: center;
     font-weight: 600;
-    font-size: 50px;
+    font-size: 44px;
     margin-bottom: 20px;
 }
 
 .descBox {
-    font-size: 18px;
+    font-size: 14px;
     text-align: justify;
 }
 
@@ -72,7 +71,7 @@
     width: 300px;
     height: 185px;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     border: 2px solid #F5DED4;
     border-radius: 30px;
     transition: 0.5s;
@@ -84,7 +83,7 @@
     border: #282525 2px solid;
     border-radius: 30px;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     display: inline-block;
     align-items: center;
     transition: 0.5s;
@@ -156,11 +155,11 @@
 #titDiferenciais {
     display: flex;
     justify-content: center;
-    font-size: 50px;
+    font-size: 44px;
 }
 
 .subtitDiferenciais {
-    font-size: 30px;
+    font-size: 24px;
 }
 
 /* Historia */
@@ -180,7 +179,7 @@
 
 /* ODS */
 #sustentCult, #cultxTec {
-    height: 95vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -198,18 +197,18 @@
 }
 
 #titSustentCult, #titCultxTec {
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
 .subtitSustentCult {
     margin-top: 20px;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 #descSustentCult, #descCultxTec {
-    font-size: 18px;
+    font-size: 12px;
 }
 
 #imagemOds{
@@ -234,7 +233,7 @@
 
 #titPlanosFuturos {
     text-align: center;
-    font-size: 50px;
+    font-size: 44px;
 }
 
 #planosFuturos .containerCards .cardsDisplay .cards {
@@ -243,7 +242,11 @@
     border-color: #282525;
 }
 
-@media (max-width:1535px) {
+#nomeApp {
+    font-family: 'Asap Condensed'!important;
+}
+
+@media (max-width:1235px) {
 
     /* Início */
     #comeco {
@@ -254,7 +257,7 @@
     #tituloComeco {
         margin-top: 30px;
         width: 80vw;
-        font-size: 40px;
+        font-size: 32px;
     }
 
     #mockupLeontis {
@@ -301,10 +304,6 @@
         height: auto;
     }
 
-    #titSuntentCult, #titCultxTec {
-        font-size: 40px;
-    }
-
     #imagemOds {
         width: 250px;
         height: 250px;
@@ -328,7 +327,7 @@
 @media (max-width:768px) {
 
     #tituloComeco {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     .containerCards {
@@ -336,11 +335,11 @@
     }
 
     .transicao {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .titBox {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .descBox {
@@ -348,7 +347,7 @@
     }
 
     #titDiferenciais {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     #sustentCult, #cultxTec {
@@ -371,8 +370,8 @@
         font-size: 20px;
     }
 
-    #descSustentCult, #descCutlxTec {
-        font-size: 16px;
+    #descSustentCult, #descCultxTec {
+        font-size: 14px;
     }
 
     #fotoObra {
@@ -385,5 +384,25 @@
         height: fit-content;
         position: static;
         margin: 50px;
+    }
+}
+
+@media (max-width: 428px) {
+
+    #ilustracao {
+        width: 100vw;
+    }
+
+    #ilustracao > img {
+        height: 230px;
+    }
+
+    #fotoObra {
+        width: 300px;
+    }
+
+    .containerCards {
+        width: 100vw;
+        padding: 0;
     }
 }

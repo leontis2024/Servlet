@@ -27,8 +27,9 @@
 }
 
 #descIni {
+    font-family: 'Inter';
     text-align: center;
-    font-size: 30px;
+    font-size: 24px;
 }
 
 #botao {
@@ -60,6 +61,7 @@
 }
 
 #login {
+    text-align: center;
     font-size: 20px;
 }
 
@@ -118,9 +120,9 @@
 }
 
 #tituloFunc {
-    margin-left: 30px;
     font-size: 50px;
     font-weight: 600;
+    margin-left: 30px;
     grid-area: tituloFunc;
 }
 
@@ -181,14 +183,10 @@
     display: flex;
     flex-direction: column;
     border-left: solid 5px #7C3939;
+    font-family: 'Inter';
     text-align: justify;
     font-size: 20px;
     padding: 20px;
-}
-
-.descFunc > h2 {
-    margin-top: 5vh;
-    font-weight: 600;
 }
 
 #textoHome {
@@ -248,6 +246,10 @@
 
 /*Sobre o App */
 #sobreApp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-image: url("../Resources/fotoRomera.jpeg");
     background-position: center;
     background-repeat: no-repeat;
@@ -260,6 +262,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     gap: 20px;
     color: white;
     background-color: #2b2a2a70;
@@ -334,19 +337,24 @@
     font-size: 70px;
     font-weight: 600;
     color: #6DC83C;
-
 }
 
 #info {
     border-left: solid 5px #6DC83C;
     height: fit-content;
     padding: 20px;
+    font-family: 'Inter';
     text-align: justify;
     color: whitesmoke;
-    font-size: 2vh;
+    font-size: 20px;
+}
+
+#info > p {
+    font-family: 'Inter';
 }
 
 #info > h2 {
+    font-family: 'Inter';
     margin-top: 5vh;
     color: #6DC83C;
     font-weight: 600;
@@ -376,6 +384,7 @@
     height: 10vw;
     box-shadow: 0px 0px 3px 0px #282525;
     border-radius: 100px;
+    margin-top: 3vh;
 }
 
 #listaIntegrantes > ul {
@@ -386,6 +395,7 @@
 }
 
 #listaIntegrantes > ul > li {
+    font-family: 'Inter';
     color: #F5E0D4;
 }
 
@@ -406,7 +416,11 @@
     grid-area: imagem;
 }
 
-@media(max-width:1535px){
+#nomeApp {
+    font-family: 'Asap Condensed'!important;
+}
+
+@media(max-width:1235px){
 
     /* /Integrantes/ */
     #integrantes {
@@ -526,11 +540,12 @@
         font-size: 40px;
     }
 
-    #info > h2 {
+    #info > p {
+        font-size: 16px;
         margin-top: 1vh;
     }
 
-    #info > h3 {
+    #info > h2 {
         font-size: 16px;
     }
 }
@@ -557,17 +572,32 @@
         font-size: 11px;
     }
 
+    /* /Funcionalidades/ */
+    #tituloFunc {
+        font-size: 28px;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+
+    .titDescFunc {
+        font-size: 24px;
+    }
+
+    .descFunc {
+        font-size: 14px;
+    }
+
     /* /Sobre a empresa/ */
     #tituloEmp {
         font-size: 30px;
     }
 
-    #info > h2 {
-        font-size: 16px;
+    #info > p {
+        font-size: 14px;
         margin-top: 1vh;
     }
 
-    #info > h3 {
+    #info > h2 {
         font-size: 14px;
     }
 }
