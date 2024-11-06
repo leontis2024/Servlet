@@ -189,7 +189,6 @@ body {
 @media (max-width:428px) {
     #links > a {
         font-size: 11px;
-        margin-left: 20px;
     }
 
     #nossosCont {

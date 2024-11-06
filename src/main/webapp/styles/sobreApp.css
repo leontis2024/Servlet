@@ -272,6 +272,7 @@
         flex-direction: column;
         gap: 50px;
         padding: 50px 0;
+        height: fit-content;
     }
 
     #ilustracao > img {
@@ -282,6 +283,7 @@
     #diferenciais {
         gap: 25px;
         padding: 50px 0;
+        height: fit-content;
     }
 
     /* História */
@@ -291,6 +293,7 @@
         align-items: center;
         gap: 50px;
         padding: 50px 0;
+        height: fit-content;
     }
 
     #historia > img {
@@ -314,6 +317,7 @@
 
     #planosFuturos {
         padding: 50px 0;
+        height: fit-content;
     }
 
     #titPlanosFuturos {

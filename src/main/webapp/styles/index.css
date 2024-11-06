@@ -1,6 +1,4 @@
 /* Início */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 #inicio {
     height: fit-content;
     display: grid;
@@ -8,15 +6,6 @@
     grid-template-areas:
     "txtInicio imagemInicio";
     background-color: #F5E0D4;
-}
-*{
-    user-select: none;
-}
-#nomeApp{
-    font-family: 'Asap Condensed';
-    font-weight: 700;
-    text-align: center;
-    font-size: 30px;
 }
 
 #txtBox {
@@ -27,23 +16,19 @@
     align-items: center;
     gap: 20px;
     padding: 0 5vw;
-    margin-left: 70px;
     grid-area: txtInicio;
-}
-#logoIntegrantes{
-    margin-top: 20px;
 }
 
 #tituloIni {
     text-align: center;
-    font-size: 39px;
+    font-size: 50px;
     font-weight: 600;
     margin-top: 100px;
 }
 
 #descIni {
     text-align: center;
-    font-size: 22px;
+    font-size: 30px;
 }
 
 #botao {
@@ -75,21 +60,14 @@
 }
 
 #login {
-    font-size: 17px;
+    font-size: 20px;
 }
 
 #login > a {
     color: #7C3939;
     text-decoration: none;
 }
-#login > a:hover {
-    color: #5a2929;
-    text-decoration: none;
-}
-#login > a:active {
-    color: #3d1b1b;
-    text-decoration: none;
-}
+
 #ilustracao {
     display: flex;
     justify-content: center;
@@ -110,7 +88,7 @@
 }
 
 .img > img:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
     transition: 0.5s;
 }
 
@@ -135,16 +113,14 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows:1fr;
     grid-template-areas:
-    "tituloFunc tituloFunc"
+    "tituloFunc textoFunc"
     "imagensFunc textoFunc";
 }
 
 #tituloFunc {
+    margin-left: 30px;
     font-size: 50px;
-    padding-top: 50px;
-    padding-bottom: 0;
     font-weight: 600;
-    text-align: center;
     grid-area: tituloFunc;
 }
 
@@ -209,14 +185,6 @@
     font-size: 20px;
     padding: 20px;
 }
-h2,p,h3{
-    font-family: 'Inter';
-    font-weight: 450;
-}
-h3{
-    font-size: 20px;
-}
-
 
 .descFunc > h2 {
     margin-top: 5vh;
@@ -355,7 +323,6 @@ h3{
 }
 
 #txtBoxEmp {
-    margin-top: 100px;
     width: 75vw;
     display: flex;
     flex-direction: column;
@@ -377,8 +344,6 @@ h3{
     text-align: justify;
     color: whitesmoke;
     font-size: 2vh;
-    margin-bottom: 100px;
-    width:800px;
 }
 
 #info > h2 {
@@ -403,6 +368,7 @@ h3{
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #282525;
     grid-area: texto;
 }
 
@@ -419,7 +385,11 @@ h3{
     align-items: center;
 }
 
-#listaIntegrantes >ul> li {
+#listaIntegrantes > ul > li {
+    color: #F5E0D4;
+}
+
+#listaIntegrantes > li {
     text-align: center;
     font-size: 1.2vw;
     color: #F5E0D4;
@@ -436,8 +406,7 @@ h3{
     grid-area: imagem;
 }
 
-
-@media(max-width:1235px){
+@media(max-width:1535px){
 
     /* /Integrantes/ */
     #integrantes {
@@ -446,9 +415,6 @@ h3{
         grid-template-areas:
         "imagem"
         "texto";
-    }
-    #info{
-        width: 400px;
     }
 
     #listaIntegrantes {
@@ -462,13 +428,11 @@ h3{
 
     #listaIntegrantes > ul > li {
         font-size: 12px;
-        color: #F5E0D4;
     }
 
     #listaIntegrantes > h1 {
         font-size: 32px;
         text-align: center;
-        color: #F5E0D4;
     }
 
     #listaIntegrantes > img {
